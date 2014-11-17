@@ -5,7 +5,7 @@ public class SplashBehavior : MonoBehaviour {
 
 	public GameObject currentPanelObject;
 	public GameObject nextPanelObject;
-	float timer = 2.0f;
+	float timer = 6.0f;
 	
 	// Use this for initialization
 	void Start () {
@@ -13,7 +13,7 @@ public class SplashBehavior : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (timer <= 1){
+		if (timer < 1){
 			NGUITools.SetActive(nextPanelObject, true);
 			NGUITools.SetActive(currentPanelObject, false);
 			}
