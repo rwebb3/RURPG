@@ -102,12 +102,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 117197352}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d44bc69c2ca5f943b845318866dc1bd, type: 3}
+  m_Script: {fileID: 11500000, guid: bc9de33bc4998a743a656db828d0200e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: b5083cfe83bb875479bd797c61594131, type: 3}
   trigger: 0
-  volume: 1
   pitch: 1
 --- !u!114 &117197354
 MonoBehaviour:
@@ -917,6 +916,7 @@ GameObject:
   - 114: {fileID: 489755712}
   - 114: {fileID: 489755711}
   - 114: {fileID: 489755710}
+  - 114: {fileID: 489755714}
   - 114: {fileID: 489755709}
   m_Layer: 5
   m_Name: Sound
@@ -947,13 +947,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 489755707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d44bc69c2ca5f943b845318866dc1bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 16810fc27a747974f810f2d60440d49c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 0}
-  trigger: 0
-  volume: 1
-  pitch: 1
 --- !u!114 &489755710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1012,6 +1008,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 150, y: 40, z: 0}
   m_Center: {x: 0, y: 1.90734863e-06, z: -.5}
+--- !u!114 &489755714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 489755707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc9de33bc4998a743a656db828d0200e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: b5083cfe83bb875479bd797c61594131, type: 3}
+  trigger: 0
+  pitch: 1
 --- !u!1 &558607807
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,8 +1115,9 @@ GameObject:
   - 114: {fileID: 613050895}
   - 114: {fileID: 613050894}
   - 114: {fileID: 613050893}
-  - 114: {fileID: 613050892}
   - 114: {fileID: 613050897}
+  - 114: {fileID: 613050898}
+  - 114: {fileID: 613050892}
   m_Layer: 5
   m_Name: Options
   m_TagString: Untagged
@@ -1136,12 +1147,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 613050890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d44bc69c2ca5f943b845318866dc1bd, type: 3}
+  m_Script: {fileID: 11500000, guid: bc9de33bc4998a743a656db828d0200e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: b5083cfe83bb875479bd797c61594131, type: 3}
   trigger: 0
-  volume: 1
   pitch: 1
 --- !u!114 &613050893
 MonoBehaviour:
@@ -1214,6 +1224,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentPanelObject: {fileID: 386582622}
   nextPanelObject: {fileID: 1313083527}
+--- !u!114 &613050898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 613050890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d44bc69c2ca5f943b845318866dc1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 0}
+  trigger: 0
+  volume: 1
+  pitch: 1
 --- !u!1 &654644431
 GameObject:
   m_ObjectHideFlags: 0
@@ -1651,8 +1676,8 @@ GameObject:
   - 114: {fileID: 897035592}
   - 114: {fileID: 897035591}
   - 114: {fileID: 897035590}
-  - 114: {fileID: 897035589}
   - 114: {fileID: 897035588}
+  - 114: {fileID: 897035589}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -1695,12 +1720,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 897035586}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d44bc69c2ca5f943b845318866dc1bd, type: 3}
+  m_Script: {fileID: 11500000, guid: bc9de33bc4998a743a656db828d0200e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: b5083cfe83bb875479bd797c61594131, type: 3}
   trigger: 0
-  volume: 1
   pitch: 1
 --- !u!114 &897035590
 MonoBehaviour:
@@ -1772,8 +1796,8 @@ GameObject:
   - 114: {fileID: 991197568}
   - 114: {fileID: 991197567}
   - 114: {fileID: 991197566}
-  - 114: {fileID: 991197565}
   - 114: {fileID: 991197570}
+  - 114: {fileID: 991197565}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -1803,12 +1827,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 991197563}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d44bc69c2ca5f943b845318866dc1bd, type: 3}
+  m_Script: {fileID: 11500000, guid: bc9de33bc4998a743a656db828d0200e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: b5083cfe83bb875479bd797c61594131, type: 3}
   trigger: 0
-  volume: 1
   pitch: 1
 --- !u!114 &991197566
 MonoBehaviour:
@@ -1893,8 +1916,8 @@ GameObject:
   - 114: {fileID: 1067955120}
   - 114: {fileID: 1067955119}
   - 114: {fileID: 1067955118}
-  - 114: {fileID: 1067955117}
   - 114: {fileID: 1067955116}
+  - 114: {fileID: 1067955117}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -1937,12 +1960,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1067955114}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d44bc69c2ca5f943b845318866dc1bd, type: 3}
+  m_Script: {fileID: 11500000, guid: bc9de33bc4998a743a656db828d0200e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: b5083cfe83bb875479bd797c61594131, type: 3}
   trigger: 0
-  volume: 1
   pitch: 1
 --- !u!114 &1067955118
 MonoBehaviour:
@@ -2123,7 +2145,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1249007909}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -320.018433, y: -240.013824, z: -2.09657526}
+  m_LocalPosition: {x: -320.018433, y: -240.013824, z: -2.12867498}
   m_LocalScale: {x: 422.5, y: 422.5, z: 422.5}
   m_Children:
   - {fileID: 1749927656}
@@ -2594,6 +2616,7 @@ GameObject:
   - 114: {fileID: 1564449955}
   - 114: {fileID: 1564449954}
   - 114: {fileID: 1564449953}
+  - 114: {fileID: 1564449957}
   - 114: {fileID: 1564449952}
   m_Layer: 5
   m_Name: Music
@@ -2624,13 +2647,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1564449950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d44bc69c2ca5f943b845318866dc1bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ef352b8a0554534e9dfb5a6abe4f5e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 0}
-  trigger: 0
-  volume: 1
-  pitch: 1
 --- !u!114 &1564449953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2689,6 +2708,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 150, y: 40, z: 0}
   m_Center: {x: 0, y: 1.90734863e-06, z: -1.5}
+--- !u!114 &1564449957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1564449950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc9de33bc4998a743a656db828d0200e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: b5083cfe83bb875479bd797c61594131, type: 3}
+  trigger: 0
+  pitch: 1
 --- !u!1 &1589333683
 GameObject:
   m_ObjectHideFlags: 0
@@ -2917,9 +2950,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 1621793391}
   - 114: {fileID: 1621793392}
+  - 82: {fileID: 1621793393}
+  - 114: {fileID: 1621793394}
   m_Layer: 5
   m_Name: Anchor
-  m_TagString: Untagged
+  m_TagString: Anchor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2961,6 +2996,75 @@ MonoBehaviour:
   runOnlyOnce: 0
   relativeOffset: {x: 0, y: 0}
   pixelOffset: {x: 0, y: 0}
+--- !u!82 &1621793393
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1621793390}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: b25bca12eefac374a8f0185f2aaf77a4, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!114 &1621793394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1621793390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3369d46ba2440043a6d4a54b2021e63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1667005087
 GameObject:
   m_ObjectHideFlags: 0
@@ -3208,8 +3312,8 @@ GameObject:
   - 114: {fileID: 1797837733}
   - 114: {fileID: 1797837732}
   - 114: {fileID: 1797837731}
-  - 114: {fileID: 1797837730}
   - 114: {fileID: 1797837735}
+  - 114: {fileID: 1797837730}
   m_Layer: 5
   m_Name: About
   m_TagString: Untagged
@@ -3239,12 +3343,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1797837728}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d44bc69c2ca5f943b845318866dc1bd, type: 3}
+  m_Script: {fileID: 11500000, guid: bc9de33bc4998a743a656db828d0200e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: b5083cfe83bb875479bd797c61594131, type: 3}
   trigger: 0
-  volume: 1
   pitch: 1
 --- !u!114 &1797837731
 MonoBehaviour:
