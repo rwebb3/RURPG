@@ -45,13 +45,13 @@ MonoBehaviour:
     outer:
       serializedVersion: 2
       x: 0
-      y: 571
+      y: 1243
       width: 367
       height: 453
     inner:
       serializedVersion: 2
       x: 0
-      y: 571
+      y: 1243
       width: 367
       height: 453
     rotated: 0
@@ -62,14 +62,14 @@ MonoBehaviour:
   - name: Blackness
     outer:
       serializedVersion: 2
-      x: 0
-      y: 117
+      x: 368
+      y: 1243
       width: 367
       height: 453
     inner:
       serializedVersion: 2
-      x: 0
-      y: 117
+      x: 368
+      y: 1243
       width: 367
       height: 453
     rotated: 0
@@ -80,16 +80,34 @@ MonoBehaviour:
   - name: Team_resize
     outer:
       serializedVersion: 2
-      x: 368
-      y: 774
+      x: 0
+      y: 992
       width: 350
       height: 250
     inner:
       serializedVersion: 2
-      x: 368
-      y: 774
+      x: 0
+      y: 992
       width: 350
       height: 250
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: map_campus
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 1697
+      width: 760
+      height: 351
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 1697
+      width: 760
+      height: 351
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
