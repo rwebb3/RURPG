@@ -5,7 +5,7 @@ public class ButtonLoadLevel : MonoBehaviour {
 	public string level;
 	public string promptText;
 	public GUIStyle dialogLabelStyle;
-	// 200x300 px window will apear in the center of the screen.
+
 	private Rect windowRect = new Rect((Screen.width*.25f) , (Screen.height*.25f), (Screen.width/2f), (Screen.height/6f));
 	// Only show it if needed.
 	private bool show = false;
