@@ -10,8 +10,9 @@ public class FileButton : MonoBehaviour {
 
 	public bool dataExists = false;
 
-	void OnGui(){
-		if (SaveLoad.savedGames[FileNumber] != null){
+	void Start(){
+		if (!(SaveLoad.savedGames[FileNumber] == null)){
+			dataExists = true;
 			GameData thisData = SaveLoad.savedGames[FileNumber];
 			GetComponentInChildren<UILabel>().text = thisData.name; 
 			Debug.Log (thisData.name);
