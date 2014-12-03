@@ -5,7 +5,7 @@ PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 3
   AndroidProfiler: 0
-  defaultScreenOrientation: 0
+  defaultScreenOrientation: 4
   targetDevice: 2
   targetGlesGraphics: 1
   targetResolution: 0
@@ -26,7 +26,7 @@ PlayerSettings:
   m_UseDX11: 1
   m_Stereoscopic3D: 0
   iosShowActivityIndicatorOnLoading: -1
-  androidShowActivityIndicatorOnLoading: 0
+  androidShowActivityIndicatorOnLoading: -1
   displayResolutionDialog: 1
   allowedAutorotateToPortrait: 1
   allowedAutorotateToPortraitUpsideDown: 1
@@ -70,7 +70,7 @@ PlayerSettings:
   iPhoneBundleIdentifier: com.Room38.RURPG
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
-  productGUID: c811ecc8094478d458bf775fc9d20f7b
+  productGUID: d2bc5af30de4cad4c938866c70bcc408
   iPhoneBundleVersion: 1.0
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 9
@@ -109,11 +109,7 @@ PlayerSettings:
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
-<<<<<<< HEAD
     - m_Icon: {fileID: 2800000, guid: 2426983408a6614418766d16dc4729f7, type: 3}
-=======
-    - m_Icon: {fileID: 2800000, guid: 44a0fddaaadf0c94281ffed6ead02828, type: 3}
->>>>>>> menu
       m_Size: 128
   m_BuildTargetBatching: []
   webPlayerTemplate: APPLICATION:Default
@@ -159,7 +155,7 @@ PlayerSettings:
   flashStrippingLevel: 2
   spritePackerPolicy: 
   scriptingDefineSymbols: {}
-  metroPackageName: Menu
+  metroPackageName: RURPG
   metroPackageLogo: 
   metroPackageLogo140: 
   metroPackageLogo180: 
@@ -170,7 +166,7 @@ PlayerSettings:
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Menu
+  metroApplicationDescription: RURPG
   metroStoreTileLogo80: 
   metroStoreTileLogo: 
   metroStoreTileLogo140: 

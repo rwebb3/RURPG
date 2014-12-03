@@ -161,7 +161,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 70715337}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -.4998779, y: .5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1134906060}
@@ -548,12 +548,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 419388226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d44bc69c2ca5f943b845318866dc1bd, type: 3}
+  m_Script: {fileID: 11500000, guid: bc9de33bc4998a743a656db828d0200e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 2cd6af6452cd1174b95ab24a2766dfcc, type: 3}
   trigger: 0
-  volume: 1
   pitch: 1
 --- !u!114 &419388230
 MonoBehaviour:
@@ -637,7 +636,7 @@ Transform:
   m_GameObject: {fileID: 776232542}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.01397038, y: 0, z: 0}
-  m_LocalScale: {x: .00236686389, y: .00236686389, z: .00236686389}
+  m_LocalScale: {x: .00416666688, y: .00416666688, z: .00416666688}
   m_Children:
   - {fileID: 1926770879}
   m_Father: {fileID: 0}
@@ -706,17 +705,17 @@ MonoBehaviour:
   widgetsAreStatic: 0
   cullWhileDragging: 0
   worldToLocal:
-    e00: 422.5
+    e00: 239.999985
     e01: 0
     e02: 0
-    e03: -3385.90259
+    e03: -1922.85291
     e10: 0
-    e11: 422.5
+    e11: 239.999985
     e12: 0
-    e13: 0
+    e13: -.5
     e20: 0
     e21: 0
-    e22: 422.5
+    e22: 239.999985
     e23: 0
     e30: 0
     e31: 0
@@ -985,12 +984,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1926672502}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d44bc69c2ca5f943b845318866dc1bd, type: 3}
+  m_Script: {fileID: 11500000, guid: bc9de33bc4998a743a656db828d0200e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 2cd6af6452cd1174b95ab24a2766dfcc, type: 3}
   trigger: 0
-  volume: 1
   pitch: 1
 --- !u!114 &1926672505
 MonoBehaviour:
