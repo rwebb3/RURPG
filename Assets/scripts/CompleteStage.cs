@@ -21,13 +21,18 @@ public class CompleteStage : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		//thisButton.enabled = true;
+		//NGUITools.SetActive (thisButton.gameObject, false);
+		//congratsAnimation.renderer.enabled = false;
 		foreach (Level l in GameData.current.levels){
+		  if (l.name.Equals(stageName)){
 			if (l.isComplete){
 				Debug.Log("it's complete");
 				thisButton.isEnabled = false;
 				NGUITools.SetActive(thisButton.gameObject, false);
 				congratsAnimation.renderer.enabled = true;
 			}
+		  }
 		}
 	}
 	
