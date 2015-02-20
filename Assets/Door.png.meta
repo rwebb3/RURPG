@@ -54,7 +54,7 @@ TextureImporter:
         height: 64
       alignment: 0
       pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 15}
     - name: Door_Open
       rect:
         serializedVersion: 2
@@ -64,6 +64,6 @@ TextureImporter:
         height: 64
       alignment: 0
       pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 15}
   spritePackingTag: 
   userData: 

@@ -6,6 +6,7 @@ public class DoorOpen : MonoBehaviour {
 	public Sprite closedDoor;
 
 	private bool isOpen = false;
+	private float timeToWait = 0f;
 
 	void OnTriggerStay2D(Collider2D other){
 		//if the thing that entered was the player, change the sprite to the opened door.
@@ -19,8 +20,10 @@ public class DoorOpen : MonoBehaviour {
 		//if the thing that left was the player, change the sprite to the closed door
 		//players are very polite
 		if (LayerMask.LayerToName(other.gameObject.layer).Equals("Player")){
-			//this.GetComponent<SpriteRenderer>().sprite = closedDoor;
 			isOpen = false;
+			//set an amount of time to wait before closing the door (prevents "stutter")
+			timeToWait = 0.5f;
+
 		}
 	}
 
@@ -29,11 +32,16 @@ public class DoorOpen : MonoBehaviour {
 	
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	// FixedUpdate is called once per tick
+	void FixedUpdate () {
 		if (isOpen)
 			this.GetComponent<SpriteRenderer>().sprite = openedDoor;
-		else
-			this.GetComponent<SpriteRenderer>().sprite = closedDoor;
+		else{
+			//update the timer
+			timeToWait -= Time.deltaTime;
+			if (timeToWait <= 0f){
+				this.GetComponent<SpriteRenderer>().sprite = closedDoor;
+			}
+		}
 	}
 }
