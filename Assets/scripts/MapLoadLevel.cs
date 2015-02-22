@@ -76,12 +76,9 @@ public class MapLoadLevel : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update() {
-	/*if (Application.platform == RuntimePlatform.Android){
-		if (Input.touchCount == 1){
-			checkToOpen((Vector3)Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position));
-		}
-	}
-	else{*/
+	
+			//check if the first click is the same position as the release
+			//if it is the level enter box will open
 			if (Input.GetMouseButton(0)){
 				if (!firstClickChecked){
 					firstClick = Camera.main.ScreenToWorldPoint(Input.mousePosition);

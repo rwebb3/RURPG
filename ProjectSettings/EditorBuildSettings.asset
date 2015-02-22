@@ -6,10 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/MainMenu.unity
+    path: Assets/scenes/MainMenu.unity
   - enabled: 1
-    path: Assets/map.unity
+    path: Assets/scenes/map.unity
   - enabled: 1
-    path: Assets/Muse.unity
+    path: Assets/scenes/Muse.unity
+  - enabled: 0
+    path: Assets/scenes/Davis_fake.unity
   - enabled: 1
-    path: Assets/Davis.unity
+    path: Assets/scenes/Davis.unity
