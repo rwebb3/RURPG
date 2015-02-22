@@ -340,7 +340,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 217540757}
   - 60: {fileID: 217540758}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2335,7 +2335,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2060279409}
   - 60: {fileID: 2060279408}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3070,6 +3070,14 @@ Prefab:
     - target: {fileID: 2300000, guid: 93b08a7fb86f78147bdbeecb8ce9925e, type: 2}
       propertyPath: m_SortingOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 167038, guid: 93b08a7fb86f78147bdbeecb8ce9925e, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 164128, guid: 93b08a7fb86f78147bdbeecb8ce9925e, type: 2}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93b08a7fb86f78147bdbeecb8ce9925e, type: 2}
