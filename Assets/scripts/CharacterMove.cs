@@ -19,10 +19,9 @@ public class CharacterMove : MonoBehaviour{
 		animator = GetComponent<Animator>();
 		target = transform.position;
 	}
-	void FixedUpdate()
+	void Update()
 	{
 		curSpeed = walkSpeed;
-		maxSpeed = curSpeed;
 
 		if(Input.GetMouseButton(0)) {
 			target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -34,13 +33,6 @@ public class CharacterMove : MonoBehaviour{
 
 			float clickDistance = Vector3.Distance(transform.position, target);
 			//Debug.Log (clickDistance);
-			if (clickDistance < 70f){
-				walkSpeed = 50;
-			}
-			else{
-				walkSpeed = 100;
-			}
-			//walkSpeed = 
 		}
 		else{
 			horizontalMagnitude = 0f;

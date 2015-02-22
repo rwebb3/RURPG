@@ -2,26 +2,23 @@
 using System.Collections;
 
 public class SetLayer : MonoBehaviour {
+
 	//if the trigger is within a collider
 	void OnTriggerStay2D(Collider2D other){
-		//Debug.Log("hit something");
 		string theLayerName = LayerMask.LayerToName(other.gameObject.layer);
-		Renderer playerRenderer = this.gameObject.transform.parent.renderer;
-
+		Renderer objectRenderer = this.gameObject.transform.parent.renderer;
 		//check that it is not the Default layer
-		if (!theLayerName.Equals("Default")){
+		if (!theLayerName.Equals("Default") && !theLayerName.Equals("Player") && !theLayerName.Equals("Enemy")){
 
 			//set the player's sprite to be on the same layer as the collided object
-			playerRenderer.sortingLayerName = theLayerName;
+			objectRenderer.sortingLayerName = theLayerName;
 		}
-		else
-			playerRenderer.sortingLayerName = "Player";
 	}
 
 	//when the trigger leaves the collider
 	void OnTriggerExit2D(Collider2D other){
 		//set the player sprite to be on the player layer
-		this.gameObject.transform.parent.renderer.sortingLayerName = "Player";
+		this.gameObject.transform.parent.renderer.sortingLayerName = LayerMask.LayerToName(this.gameObject.layer);
 	}
 	
 }
