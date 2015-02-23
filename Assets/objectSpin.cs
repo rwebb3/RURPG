@@ -18,12 +18,7 @@ public class objectSpin : MonoBehaviour {
 			playerIsNear = false;
 		}
 	}
-
-	void OnMouseDown(){
-		if (playerIsNear){
-			Destroy(this.gameObject);
-		}
-	}
+	
 	// Update is called once per frame
 	void Update () {
 		if (playerIsNear){

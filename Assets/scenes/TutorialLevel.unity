@@ -998,6 +998,7 @@ GameObject:
   - 114: {fileID: 754236015}
   - 50: {fileID: 754236019}
   - 58: {fileID: 754236018}
+  - 114: {fileID: 754236020}
   m_Layer: 0
   m_Name: Brass_key
   m_TagString: Untagged
@@ -1077,6 +1078,19 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!114 &754236020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 754236014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2131950578e9e7e49abe065d8c253b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: BrassKey
+  type: key
 --- !u!1001 &818681561
 Prefab:
   m_ObjectHideFlags: 0

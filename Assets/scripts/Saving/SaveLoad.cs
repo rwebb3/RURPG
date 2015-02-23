@@ -24,7 +24,6 @@ public static class SaveLoad{
 		   BinaryFormatter bf = new BinaryFormatter();
 		   FileStream file = File.Open(Application.persistentDataPath + "/savedGames.rugs", FileMode.Open);
 		   SaveLoad.savedGames = (GameData[])bf.Deserialize(file);
-			Debug.Log(savedGames[0]);
 		   file.Close();
 		}
 	}

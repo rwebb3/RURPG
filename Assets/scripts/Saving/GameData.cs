@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class GameData {
 
 	public static GameData current;
+
 	public string name;
 	public List<Level> levels;
 
@@ -23,6 +24,7 @@ public class GameData {
 		levels = new List<Level>();
 		levels.Add(muse);
 		levels.Add(davis);
+
 	}
 
 }
