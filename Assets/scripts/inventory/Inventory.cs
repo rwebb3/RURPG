@@ -13,4 +13,14 @@ public class Inventory{
 	public void AddItem(Item theItem){
 		items.Add(theItem);
 	}
+
+	public bool Contains(Item anItem){
+		bool foundStatus = false;
+		foreach(Item itemToCheck in items){
+			if (anItem.Equals(itemToCheck))
+				foundStatus = true;
+		}
+		return foundStatus;
+	}
+
 }
