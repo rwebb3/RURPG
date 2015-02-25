@@ -15,3 +15,5 @@ EditorBuildSettings:
     path: Assets/scenes/Davis_fake.unity
   - enabled: 1
     path: Assets/scenes/Davis.unity
+  - enabled: 1
+    path: Assets/scenes/TutorialLevel.unity

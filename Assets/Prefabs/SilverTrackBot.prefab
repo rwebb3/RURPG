@@ -76,7 +76,7 @@ GameObject:
   - 50: {fileID: 5063472}
   m_Layer: 11
   m_Name: SilverTrackBot
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5, y: .0149999997, z: 0}
+  m_LocalPosition: {x: -.954596817, y: .0366586521, z: 0}
   m_LocalScale: {x: .00999999978, y: .0076923077, z: 1}
   m_Children: []
   m_Father: {fileID: 463480}
@@ -112,7 +112,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .81099999, z: 0}
+  m_LocalPosition: {x: -.0506826788, y: .836992025, z: 0}
   m_LocalScale: {x: .00999999978, y: .0076923077, z: 1}
   m_Children: []
   m_Father: {fileID: 463480}
@@ -124,7 +124,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163478}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5, y: .822000027, z: 0}
+  m_LocalPosition: {x: -.977122188, y: .856655657, z: 0}
   m_LocalScale: {x: .00999999978, y: .0076923077, z: 1}
   m_Children: []
   m_Father: {fileID: 463480}
@@ -136,7 +136,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 438.399994, y: -405.5, z: 0}
+  m_LocalPosition: {x: 411.867493, y: -1614.07007, z: 0}
   m_LocalScale: {x: 100, y: 130, z: 1}
   m_Children:
   - {fileID: 463476}

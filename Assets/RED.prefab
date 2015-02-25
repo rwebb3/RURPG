@@ -32,6 +32,7 @@ GameObject:
   - 61: {fileID: 6100000}
   - 95: {fileID: 9500000}
   - 50: {fileID: 5000000}
+  - 114: {fileID: 11400004}
   m_Layer: 9
   m_Name: RED
   m_TagString: Player
@@ -75,7 +76,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 363.600006, y: -1769.09998, z: -1}
+  m_LocalPosition: {x: 393.399994, y: -318.299988, z: -1}
   m_LocalScale: {x: 100, y: 100, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -203,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eac3602cc45c71448dd7a47b81f0af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 70
+  walkSpeed: 50
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -213,6 +214,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b870673abed1a8f499d88552bab11b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd4fa1a133b4354bacc64fe473b434d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!124 &12400000

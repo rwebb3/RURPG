@@ -15,10 +15,11 @@ public class MapLoadLevel : MonoBehaviour {
 	private bool firstClickChecked = false;
 	private Vector3 firstClick;
 	void Start(){
+		//checkMark.renderer.enabled = true;
 		foreach(Level l in GameData.current.levels){
 			if (l.name.Equals(level)){
-				Debug.Log(l.name);
 				if (l.isComplete){
+					Debug.Log(l.name);
 					checkMark.renderer.enabled = true;}
 			}
 		}
@@ -49,6 +50,7 @@ public class MapLoadLevel : MonoBehaviour {
 		//Debug.Log (dialogLabelStyle.fontSize);
 		if(GUI.Button(new Rect(windowRect.width/8, windowRect.height/2, windowRect.width/2-windowRect.width/8, windowRect.height/3), "Yes", dialogButtonStyle))
 		{
+			GameData.current.setCurrentLevel(level);
 			Application.LoadLevel(level);
 			show = false;
 		}
