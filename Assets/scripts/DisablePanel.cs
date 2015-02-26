@@ -7,9 +7,8 @@ public class DisablePanel : MonoBehaviour {
 	void Start () {
 		NGUITools.SetActive(this.gameObject, false);
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
-		
+
 	}
 }

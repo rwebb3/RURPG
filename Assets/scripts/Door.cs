@@ -6,7 +6,7 @@ public class Door : MonoBehaviour {
 	public Sprite closedDoor;
 	public bool isLocked = false; //is the door locked?
 	public GameObject aKeyObject; //the in world key object
-
+	
 	private float timeToWait = 0f; //used on the timer to prevent door flicker
 	private bool isOpen = false; //checks if the door is open
 	private Item keyToFitLock; //the logical key that will fit the lock
