@@ -13,7 +13,9 @@ public class CompleteStageCheck : MonoBehaviour {
 	void Update () {
 		if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0){
 			Debug.Log("stage complete");
-			GameData.current.currentLevel.Complete();
+			if (GameData.current != null){
+				GameData.current.currentLevel.Complete();
+			}
 
 		}	
 	}

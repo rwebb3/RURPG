@@ -5,7 +5,7 @@ public class SetupLevel : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (GameData.current.currentLevel.isComplete){
+		if (GameData.current != null && GameData.current.currentLevel.isComplete){
 			GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 			GameObject[] allItems = GameObject.FindGameObjectsWithTag("Item");
 			//for each item still in map, add item to unObtainedItems
