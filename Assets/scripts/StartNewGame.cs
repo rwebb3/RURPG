@@ -9,7 +9,7 @@ public class StartNewGame : MonoBehaviour {
 		GameData.current.name = UIInput.current.text;
 		SaveLoad.Save();
 		//Debug.Log(GameData.current.name);
-		Application.LoadLevel("map");
+		Application.LoadLevel("tutorialLevel");
 
 	}
 
