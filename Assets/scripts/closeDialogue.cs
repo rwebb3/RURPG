@@ -3,15 +3,17 @@ using System.Collections;
 
 public class closeDialogue : MonoBehaviour {
 
-	public GameObject menu;
-	public GameObject menu2;
+	public GameObject thePanelToClose;
 	private bool isShowing = true;
+
+	public void Start(){
+		//thePanelToClose = this.transform.parent.gameObject;
+	}
 
 	//Button should close Help Text
 	public void OKbutton() {
 		isShowing = false;
-		menu.SetActive (isShowing);
-		menu2.SetActive (isShowing);
+		thePanelToClose.SetActive(isShowing);
 		Time.timeScale = 1;
 	}
 
