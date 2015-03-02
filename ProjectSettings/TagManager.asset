@@ -45,6 +45,18 @@ TagManager:
     userID: 0
     uniqueID: 0
     locked: 0
+  - name: Floor
+    userID: 7
+    uniqueID: 1455374295
+    locked: 0
+  - name: Decoration
+    userID: 8
+    uniqueID: 15580873
+    locked: 0
+  - name: Items
+    userID: 9
+    uniqueID: 658671901
+    locked: 0
   - name: Enemy
     userID: 5
     uniqueID: 3395302873

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" nextobjectid="1">
+ <tileset firstgid="1" source="Front_wall.tsx"/>
+ <tileset firstgid="7" source="Top_Wall.tsx"/>
+ <layer name="Tile Layer 2" width="32" height="32">
+  <properties>
+   <property name="unity:layer" value="underwall"/>
+   <property name="unity:sortingLayerName" value="underwall"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztyDEKACAMBMGg5P9fVgs7CXYWzsDCcREA/K7NetG2dh6+2wAAeGcAnXYARA==
+  </data>
+ </layer>
+ <layer name="Tile Layer 1" width="32" height="32">
+  <properties>
+   <property name="unity:layer" value="wall"/>
+   <property name="unity:sortingLayerName" value="wall"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztld0KgDAIRu2Piuj9X7eryGLlDOY3nAcGXihnG6JEWGYW74o6Te6ThcXrSyyhyf2qrc0/ZB5NbqpWuktJPPg99p8VG9iPfn/4sf7ov3Tc0X1PnGj3i1TnYf6X8FtRqx/9/y36EbTu5/R0zcWJ9LP2zxlNXhbkcADKZgNb
+  </data>
+ </layer>
+</map>

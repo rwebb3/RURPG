@@ -1,4 +1,5 @@
 ﻿// AutoFade.cs
+// this script was found at: http://answers.unity3d.com/questions/119918/transitions-between-changing-scenes.html
 using UnityEngine;
 using System.Collections;
 public class AutoFade : MonoBehaviour
