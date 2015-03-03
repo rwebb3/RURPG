@@ -4,6 +4,8 @@ using System.Collections;
 public class Door : MonoBehaviour {
 	public Sprite openedDoor;
 	public Sprite closedDoor;
+	public AudioClip openSound;
+	public AudioClip closeSound;
 	public bool isLocked = false; //is the door locked?
 	public GameObject aKeyObject; //the in world key object
 	
@@ -12,6 +14,18 @@ public class Door : MonoBehaviour {
 	private Item keyToFitLock; //the logical key that will fit the lock
 	private BoxCollider2D doorCollider; //the doors collider (starts as a trigger)
 	private ItemBehavior theKey;
+
+	//only want the open sound to play once, so do it here:
+	void OnTriggerEnter2D(Collider2D other){
+		if (LayerMask.LayerToName(other.gameObject.layer).Equals("Player")){
+			if (isLocked && GlobalVars.currentInventory.Contains(keyToFitLock)){
+				audio.PlayOneShot(openSound);
+			}
+			if (!isLocked){
+				audio.PlayOneShot(openSound);
+			}
+		}
+	}
 
 	void OnTriggerStay2D(Collider2D other){
 		//if the thing that entered was the player and the player has they key for this door
@@ -29,6 +43,7 @@ public class Door : MonoBehaviour {
 		//players are very polite
 		if (LayerMask.LayerToName(other.gameObject.layer).Equals("Player")){
 			isOpen = false;
+			audio.PlayOneShot(closeSound);
 			//set an amount of time to wait before closing the door (prevents "stutter")
 			timeToWait = 0.5f;
 
