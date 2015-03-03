@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="120" tilewidth="16" tileheight="16" nextobjectid="1">
  <tileset firstgid="1" source="Front_wall.tsx"/>
- <tileset firstgid="7" source="Top_Wall.tsx"/>
+ <tileset firstgid="7" source="../../piskel/test_room/Top_Wall.tsx"/>
  <tileset firstgid="15" name="floor" tilewidth="16" tileheight="16">
-  <image source="floor.png" width="16" height="16"/>
+  <image source="../../piskel/test_room/floor.png" width="16" height="16"/>
  </tileset>
  <tileset firstgid="16" name="Grass_8bit_V2" tilewidth="16" tileheight="16">
-  <image source="Grass_8bit_V2.jpg" width="600" height="600"/>
+  <image source="../../piskel/test_room/Grass_8bit_V2.jpg" width="600" height="600"/>
  </tileset>
  <tileset firstgid="1385" name="aBush" tilewidth="33" tileheight="32">
-  <image source="aBush.png" width="33" height="32"/>
+  <image source="../../piskel/test_room/aBush.png" width="33" height="32"/>
  </tileset>
  <tileset firstgid="1386" name="aTree" tilewidth="120" tileheight="150">
-  <image source="aTree.png" width="120" height="150"/>
+  <image source="../../piskel/test_room/aTree.png" width="120" height="150"/>
  </tileset>
  <layer name="Floor" width="32" height="120">
   <data encoding="base64" compression="zlib">

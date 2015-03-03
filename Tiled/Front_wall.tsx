@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tileset name="Front_wall" tilewidth="16" tileheight="64">
- <image source="Front_wall.png" width="96" height="64"/>
+ <image source="../../piskel/test_room/Front_wall.png" width="96" height="64"/>
  <tile id="0">
   <properties>
    <property name="unity:layer" value="wall"/>
@@ -14,7 +14,7 @@
    <property name="unity:sortingLayerName" value="wall"/>
   </properties>
   <objectgroup draworder="index">
-   <object id="0" x="0.125" y="10.625" width="15.7273" height="4"/>
+   <object id="0" x="-0.0340909" y="-48.9773" width="16" height="64.4773"/>
   </objectgroup>
  </tile>
  <tile id="2">
@@ -32,7 +32,7 @@
    <property name="unity:sortingLayerName" value="wall"/>
   </properties>
   <objectgroup draworder="index">
-   <object id="0" x="-0.0909091" y="10.1932" width="15.9091" height="3.90909"/>
+   <object id="0" x="-9.09091e-09" y="-49.2613" width="15.9091" height="64.5455"/>
   </objectgroup>
  </tile>
  <tile id="4">
@@ -41,7 +41,7 @@
    <property name="unity:sortingLayerName" value="wall"/>
   </properties>
   <objectgroup draworder="index">
-   <object id="0" x="0.25" y="10.875" width="15.625" height="3.75"/>
+   <object id="0" x="0.25" y="-49.9432" width="15.625" height="64.9318"/>
    <object id="0" x="9.125" y="13.5" height="0.125"/>
   </objectgroup>
  </tile>
