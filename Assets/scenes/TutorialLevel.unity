@@ -73,6 +73,7 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
+    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &960593
 GameObject:
@@ -496,8 +497,8 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ignoreReversedGraphics: 1
-  blockingObjects: 0
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -595,10 +596,10 @@ RectTransform:
   - {fileID: 901666149}
   m_Father: {fileID: 104283846}
   m_RootOrder: 2
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -400}
+  m_SizeDelta: {x: 512, y: 510}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &130418888
 MonoBehaviour:
@@ -1546,10 +1547,10 @@ RectTransform:
   - {fileID: 604707452}
   m_Father: {fileID: 104283846}
   m_RootOrder: 3
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -400}
+  m_SizeDelta: {x: 512, y: 510}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &391424715
 MonoBehaviour:
@@ -3005,7 +3006,6 @@ GameObject:
   - 4: {fileID: 735463516}
   - 114: {fileID: 735463515}
   - 114: {fileID: 735463517}
-  - 114: {fileID: 735463518}
   - 114: {fileID: 735463519}
   m_Layer: 0
   m_Name: _GM
@@ -3048,18 +3048,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aad4d276aa39b544a9a76fd5c1f4a2b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &735463518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 735463514}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86e52750108deb145821e69084e7196f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  labelFont: {fileID: 12800000, guid: 0bec2c5dbb56ded4aaef78bb87bb146c, type: 3}
 --- !u!114 &735463519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3167,10 +3155,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 803990191}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 17.010006, y: -28.2700005}
-  m_SizeDelta: {x: -205.379974, y: -56.5400009}
+  m_AnchorMin: {x: .5, y: 1}
+  m_AnchorMax: {x: .5, y: 1}
+  m_AnchoredPosition: {x: 8, y: -195}
+  m_SizeDelta: {x: 324.540009, y: 187.800003}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &746250774
 MonoBehaviour:
@@ -3718,10 +3706,10 @@ RectTransform:
   - {fileID: 1097780662}
   m_Father: {fileID: 104283846}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 9.53674316e-07, y: 0}
-  m_SizeDelta: {x: 0, y: -400}
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 512, y: 510}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &803990192
 MonoBehaviour:
@@ -4334,10 +4322,10 @@ RectTransform:
   - {fileID: 899531723}
   m_Father: {fileID: 803990191}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2, y: -130}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: .5, y: 0}
+  m_AnchorMax: {x: .5, y: 0}
+  m_AnchoredPosition: {x: -2, y: 107}
+  m_SizeDelta: {x: 1046, y: 254}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1097780663
 MonoBehaviour:
@@ -5004,10 +4992,10 @@ RectTransform:
   - {fileID: 362686988}
   m_Father: {fileID: 104283846}
   m_RootOrder: 5
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: .720006943, y: .461257935}
-  m_SizeDelta: {x: 1.91998291, y: -401.230042}
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: .72000885, y: .461257935}
+  m_SizeDelta: {x: 513.919983, y: 508.769958}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1517690316
 MonoBehaviour:
@@ -5505,10 +5493,10 @@ RectTransform:
   - {fileID: 548861297}
   m_Father: {fileID: 104283846}
   m_RootOrder: 4
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -400}
+  m_SizeDelta: {x: 512, y: 510}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1721988179
 MonoBehaviour:
@@ -5823,8 +5811,8 @@ AudioSource:
   Mute: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: .5
-  MaxDistance: 46.3380127
+  MinDistance: 1
+  MaxDistance: 62.508667
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0

@@ -31,4 +31,14 @@ public class NPCbehavior : MonoBehaviour {
 			playerIsNear = false;
 		}
 	}
+	
+	void Update(){
+		if(Time.timeScale.Equals(0)){
+			this.collider2D.enabled = false;
+		}
+		else{
+			this.collider2D.enabled = true;
+		}
+	}
+		
 }
