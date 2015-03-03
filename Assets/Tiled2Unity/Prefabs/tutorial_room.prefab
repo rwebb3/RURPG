@@ -1156,7 +1156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NumTilesWide: 32
-  NumTilesHigh: 120
+  NumTilesHigh: 150
   TileWidth: 16
   TileHeight: 16
   ExportScale: 1
