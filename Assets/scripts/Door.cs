@@ -17,7 +17,7 @@ public class Door : MonoBehaviour {
 
 	//only want the open sound to play once, so do it here:
 	void OnTriggerEnter2D(Collider2D other){
-		if (LayerMask.LayerToName(other.gameObject.layer).Equals("Player")){
+		if (LayerMask.LayerToName(other.gameObject.layer).Equals("Player") && other.name.Equals("LayerCheck")){
 			if (isLocked && GlobalVars.currentInventory.Contains(keyToFitLock)){
 				audio.PlayOneShot(openSound);
 			}
@@ -41,9 +41,11 @@ public class Door : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D other){
 		//if the thing that left was the player, change the sprite to the closed door
 		//players are very polite
-		if (LayerMask.LayerToName(other.gameObject.layer).Equals("Player")){
+		if (LayerMask.LayerToName(other.gameObject.layer).Equals("Player") && isOpen){
 			isOpen = false;
-			audio.PlayOneShot(closeSound);
+			if (other.name.Equals("LayerCheck")){
+				audio.PlayOneShot(closeSound);
+			}
 			//set an amount of time to wait before closing the door (prevents "stutter")
 			timeToWait = 0.5f;
 
