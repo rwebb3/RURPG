@@ -1,0 +1,22 @@
+﻿Changed text box sizes
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is ahead of 'origin/master' by 3 commits.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#	new file:   Assets/Tiled2Unity/Materials/perspective_walls.mat
+#	new file:   Assets/Tiled2Unity/Materials/perspective_walls.mat.meta
+#	new file:   Assets/Tiled2Unity/Materials/tmw_desert_spacing.mat
+#	new file:   Assets/Tiled2Unity/Materials/tmw_desert_spacing.mat.meta
+#	new file:   Assets/Tiled2Unity/Materials/yellow Walls bricks.mat
+#	new file:   Assets/Tiled2Unity/Materials/yellow Walls bricks.mat.meta
+#	modified:   Assets/Tiled2Unity/Meshes/test_room.obj
+#	modified:   Assets/Tiled2Unity/Meshes/tutorial_room.obj
+#	modified:   Assets/Tiled2Unity/Prefabs/test_room.prefab
+#	modified:   Assets/Tiled2Unity/Prefabs/thirdFloor.prefab
+#	modified:   Assets/Tiled2Unity/Prefabs/untitled.prefab
+#	modified:   Assets/scenes/TutorialLevel.unity
+#
+
