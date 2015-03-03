@@ -12,7 +12,7 @@ public class CompleteStageCheck : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0){
-			Debug.Log("stage complete");
+			//Debug.Log("stage complete");
 			if (GameData.current != null){
 				GameData.current.currentLevel.Complete();
 			}
