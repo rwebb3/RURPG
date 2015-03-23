@@ -27,6 +27,7 @@ GameObject:
   - 212: {fileID: 21229994}
   - 114: {fileID: 11429994}
   - 61: {fileID: 6129994}
+  - 82: {fileID: 8241932}
   m_Layer: 8
   m_Name: Door
   m_TagString: Untagged
@@ -81,6 +82,64 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: .319999993, y: .179263905}
   m_Center: {x: 0, y: -.229216918}
+--- !u!82 &8241932
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129994}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &11429994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -94,6 +153,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openedDoor: {fileID: 21300002, guid: 31b19224e6987e349a3f46c97af46492, type: 3}
   closedDoor: {fileID: 21300000, guid: 31b19224e6987e349a3f46c97af46492, type: 3}
+  openSound: {fileID: 8300000, guid: 692be59243738f54c970cfb13eef1905, type: 3}
+  closeSound: {fileID: 8300000, guid: 5ef7508c656e08d499cebf8d68b52081, type: 3}
+  isLocked: 0
+  aKeyObject: {fileID: 0}
 --- !u!212 &21229994
 SpriteRenderer:
   m_ObjectHideFlags: 1

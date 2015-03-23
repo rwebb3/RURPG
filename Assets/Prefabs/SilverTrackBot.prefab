@@ -74,6 +74,7 @@ GameObject:
   - 95: {fileID: 9563472}
   - 114: {fileID: 11463474}
   - 50: {fileID: 5063472}
+  - 82: {fileID: 8258874}
   m_Layer: 11
   m_Name: SilverTrackBot
   m_TagString: Enemy
@@ -100,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.954596817, y: .0366586521, z: 0}
+  m_LocalPosition: {x: -1.67799997, y: .0366586521, z: 0}
   m_LocalScale: {x: .00999999978, y: .0076923077, z: 1}
   m_Children: []
   m_Father: {fileID: 463480}
@@ -112,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0506826788, y: .836992025, z: 0}
+  m_LocalPosition: {x: -.0506826788, y: .448000014, z: 0}
   m_LocalScale: {x: .00999999978, y: .0076923077, z: 1}
   m_Children: []
   m_Father: {fileID: 463480}
@@ -124,7 +125,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163478}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.977122188, y: .856655657, z: 0}
+  m_LocalPosition: {x: -1.70000005, y: .521000028, z: 0}
   m_LocalScale: {x: .00999999978, y: .0076923077, z: 1}
   m_Children: []
   m_Father: {fileID: 463480}
@@ -136,7 +137,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 411.867493, y: -1614.07007, z: 0}
+  m_LocalPosition: {x: 436.899994, y: -151.100006, z: 0}
   m_LocalScale: {x: 100, y: 130, z: 1}
   m_Children:
   - {fileID: 463476}
@@ -171,6 +172,64 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: 23.0200005, y: 43.0900002}
   m_Center: {x: 0, y: 0}
+--- !u!82 &8258874
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163480}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 692aaf8da70d418418733f0eea734a86, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 120
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: .0120236482
+      value: 1
+      inSlope: 0
+      outSlope: -1.01216996
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: -1.01216996
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9563472
 Animator:
   serializedVersion: 3
