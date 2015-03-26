@@ -2,11 +2,14 @@
 using System.Collections;
 
 public class encounterEnemy : MonoBehaviour {
+	public GameObject mainObject;
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (LayerMask.LayerToName(other.gameObject.layer).Equals("Enemy")){
 			Debug.Log("hit enemy");
 			Destroy(other.transform.parent.gameObject);
+			Application.LoadLevelAdditive("battle");
+			//mainObject.SetActive(false);
 		}
 	}
 
