@@ -10,7 +10,7 @@ public class EnemyBattleEntity : BattleEntity {
 	
 	private int AIState;
 	
-	public EnemyBattleEntity(int hp, int sp, int atk, int def, int spd, int maxHP, int maxSP, string entityName, string sprite, string spriteNum) 
+	public EnemyBattleEntity(int hp, int sp, int atk, int def, int spd, int maxHP, int maxSP, string entityName, string sprite) 
 		:base(hp, sp, atk, def, spd, maxHP, maxSP, entityName, sprite)
 	{
 

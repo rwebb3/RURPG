@@ -11,8 +11,8 @@ public class BattleSystem : MonoBehaviour {
 			playerCharacters = GameData.current.players;
 			
 			
-			Debug.Log(enemies);
-			Debug.Log(playerCharacters);
+			Debug.Log(enemies.Count);
+			//Debug.Log(playerCharacters);
 			battleOver = false;
 			
 			initBattle();
@@ -31,9 +31,14 @@ public class BattleSystem : MonoBehaviour {
 			}
 			}
 			
-			for (int i = 0; i < enemies.Count; i++)
+			GameObject[] enemyObjects = GameObject.FindGameObjectsWithTag("BattleEnemy");
+			Debug.Log(enemyObjects.Length);
+			for (int i = 0; i < enemyObjects.Length; i++)
 			{
-				//enemyObjects[i].GetComponent<SpriteRenderer>().sprite = 
+				if (i<enemies.Count){
+					Debug.Log(enemyObjects[i].name);
+					enemyObjects[i].GetComponent<SpriteRenderer>().sprite = enemies[i].getSprite();
+				}
 			}
 		
 		}

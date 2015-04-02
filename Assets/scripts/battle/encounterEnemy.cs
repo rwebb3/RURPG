@@ -13,6 +13,7 @@ public class encounterEnemy : MonoBehaviour {
 			//Debug.Log("hit enemy");
 			Application.LoadLevelAdditive("DefaultBattle");
 			theEnemies = other.gameObject.GetComponent<DefineEncounter>().GetEnemyList();
+			Debug.Log ("encounter: " + theEnemies.Count);
 			Destroy(other.transform.parent.gameObject);
 		}
 	}

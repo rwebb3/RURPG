@@ -12,6 +12,7 @@ TagManager:
   - BattleScene
   - BattleManager
   - BattlePlayer
+  - BattleEnemy
   layers:
   - Default
   - TransparentFX
