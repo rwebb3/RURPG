@@ -15,7 +15,7 @@ public class ItemBehavior: MonoBehaviour {
 	void OnMouseDown(){
 		if (playerIsNear){
 			GlobalVars.currentInventory.AddItem(thisItem);
-			audio.Play();
+			GetComponent<AudioSource>().Play();
 			Destroy(this.gameObject);
 		}
 	}

@@ -7,7 +7,7 @@ public class startMusicPlay : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (mainPanel.alpha > 0.0f && !playing){
-			audio.Play();
+			GetComponent<AudioSource>().Play();
 			playing = true;
 		}
 	}

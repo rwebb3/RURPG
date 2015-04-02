@@ -20,7 +20,7 @@ public class MapLoadLevel : MonoBehaviour {
 			if (l.name.Equals(level)){
 				if (l.isComplete){
 					Debug.Log(l.name);
-					checkMark.renderer.enabled = true;}
+					checkMark.GetComponent<Renderer>().enabled = true;}
 			}
 		}
 	}
@@ -71,7 +71,7 @@ public class MapLoadLevel : MonoBehaviour {
 		Vector2 touchPos = new Vector2(worldPoint.x, worldPoint.y);
 		//Debug.Log(touchPos);
 		//Debug.Log(Input.mousePosition);
-		if (collider2D.OverlapPoint(touchPos)){
+		if (GetComponent<Collider2D>().OverlapPoint(touchPos)){
 			Open();
 		}
 	}

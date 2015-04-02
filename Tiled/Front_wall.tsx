@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tileset name="Front_wall" tilewidth="16" tileheight="64">
- <image source="../../piskel/test_room/Front_wall.png" width="96" height="64"/>
+ <image source="./Front_wall.png" width="96" height="64"/>
  <tile id="0">
   <properties>
    <property name="unity:layer" value="wall"/>

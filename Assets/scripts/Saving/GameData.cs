@@ -11,7 +11,8 @@ public class GameData {
 	public string name;
 	public List<Level> levels;
 	
-
+	public List<PlayerBattleEntity> players;
+	
 	Level muse;
 	Level davis;
 	public Level tutorial;
@@ -30,6 +31,11 @@ public class GameData {
 		levels.Add(muse);
 		levels.Add(davis);
 		levels.Add (tutorial);
+		
+		players = new List<PlayerBattleEntity>();
+		/*public PlayerBattleEntity(int hp, int sp, int atk, int def, int spd, int maxHP, int maxSP, string entityName)*/
+		players.Add(new PlayerBattleEntity(5, 3, 10, 10, 10, 10, 10, "Howard", "sprites/silverrobotontracks_battle")); 
+		
 
 	}
 	

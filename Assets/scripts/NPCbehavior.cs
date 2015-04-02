@@ -34,10 +34,10 @@ public class NPCbehavior : MonoBehaviour {
 	
 	void Update(){
 		if(Time.timeScale.Equals(0)){
-			this.collider2D.enabled = false;
+			this.GetComponent<Collider2D>().enabled = false;
 		}
 		else{
-			this.collider2D.enabled = true;
+			this.GetComponent<Collider2D>().enabled = true;
 		}
 	}
 		
