@@ -17,3 +17,5 @@ EditorBuildSettings:
     path: Assets/scenes/Davis.unity
   - enabled: 1
     path: Assets/scenes/TutorialLevel.unity
+  - enabled: 1
+    path: Assets/scenes/BattleScenes/DefaultBattle.unity

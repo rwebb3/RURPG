@@ -13,7 +13,7 @@ public class CompleteStage : MonoBehaviour {
 				l.Complete();
 				thisButton.enabled = false;
 				NGUITools.SetActive(thisButton.gameObject, false);
-				congratsAnimation.renderer.enabled = true;
+				congratsAnimation.GetComponent<Renderer>().enabled = true;
 				NGUITools.PlaySound(audioClip, GlobalVars.soundVolume, 1f);
 			}
 		}
@@ -30,7 +30,7 @@ public class CompleteStage : MonoBehaviour {
 				Debug.Log("it's complete");
 				thisButton.isEnabled = false;
 				NGUITools.SetActive(thisButton.gameObject, false);
-				congratsAnimation.renderer.enabled = true;
+				congratsAnimation.GetComponent<Renderer>().enabled = true;
 			}
 		  }
 		}

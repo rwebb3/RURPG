@@ -22,12 +22,12 @@ public class moveCamera: MonoBehaviour{
 
 	void Start()
 	{
-		_camera = this.camera;
+		_camera = this.GetComponent<Camera>();
 	}
 
 	void Update()
 	{
-		if (_camera.active == true)
+		if (_camera.enabled == true)
 		{
 			if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Moved)
 			{

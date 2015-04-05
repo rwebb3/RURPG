@@ -6,7 +6,7 @@ public class SetLayer : MonoBehaviour {
 	//if the trigger is within a collider
 	void OnTriggerStay2D(Collider2D other){
 		string theLayerName = LayerMask.LayerToName(other.gameObject.layer);
-		Renderer objectRenderer = this.gameObject.transform.parent.renderer;
+		Renderer objectRenderer = this.gameObject.transform.parent.GetComponent<Renderer>();
 		//check that it is not the Default layer
 		if (!theLayerName.Equals("Default") && !theLayerName.Equals("Player") && !theLayerName.Equals("Enemy")){
 
@@ -18,7 +18,7 @@ public class SetLayer : MonoBehaviour {
 	//when the trigger leaves the collider
 	void OnTriggerExit2D(Collider2D other){
 		//set the player sprite to be on the player layer
-		this.gameObject.transform.parent.renderer.sortingLayerName = LayerMask.LayerToName(this.gameObject.layer);
+		this.gameObject.transform.parent.GetComponent<Renderer>().sortingLayerName = LayerMask.LayerToName(this.gameObject.layer);
 	}
 	
 }

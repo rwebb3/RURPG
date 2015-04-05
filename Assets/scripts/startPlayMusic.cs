@@ -9,7 +9,7 @@ public class startPlayMusic : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (mainPanel.alpha > 0.0f && !playing){
-			gameObject.audio.Play();
+			gameObject.GetComponent<AudioSource>().Play();
 			playing = true;
 		}
 	}

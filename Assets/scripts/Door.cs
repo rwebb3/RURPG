@@ -19,10 +19,10 @@ public class Door : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if (LayerMask.LayerToName(other.gameObject.layer).Equals("Player") && other.name.Equals("LayerCheck")){
 			if (isLocked && GlobalVars.currentInventory.Contains(keyToFitLock)){
-				audio.PlayOneShot(openSound);
+				GetComponent<AudioSource>().PlayOneShot(openSound);
 			}
 			if (!isLocked){
-				audio.PlayOneShot(openSound);
+				GetComponent<AudioSource>().PlayOneShot(openSound);
 			}
 		}
 	}
@@ -44,7 +44,7 @@ public class Door : MonoBehaviour {
 		if (LayerMask.LayerToName(other.gameObject.layer).Equals("Player") && isOpen){
 			isOpen = false;
 			if (other.name.Equals("LayerCheck")){
-				audio.PlayOneShot(closeSound);
+				GetComponent<AudioSource>().PlayOneShot(closeSound);
 			}
 			//set an amount of time to wait before closing the door (prevents "stutter")
 			timeToWait = 0.5f;
