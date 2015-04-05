@@ -237,7 +237,6 @@ public abstract class BattleEntity {
 	
 	public Sprite getSprite(){
 		Sprite theSprite = Resources.Load<Sprite>(this.sprite);
-		//Debug.Log (theSprite);
 		return theSprite;
 	}
 	

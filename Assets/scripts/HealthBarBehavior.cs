@@ -4,11 +4,11 @@ using System.Collections;
 public class HealthBarBehavior : MonoBehaviour {
 	public float health;
 	public float maxHealth;
+
 	private float previousHealth;
 	private float tempHealth;
 
 	Vector3 startScale;
-
 	// Use this for initialization
 	void Start () {
 		startScale = this.transform.localScale;

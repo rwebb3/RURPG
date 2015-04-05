@@ -33,7 +33,6 @@ public class BattleSystem : MonoBehaviour {
 			}
 			
 			GameObject[] enemyObjects = GameObject.FindGameObjectsWithTag("BattleEnemy");
-			Debug.Log("BS enemy objects: " + enemyObjects.Length);
 			for (int i = 0; i < enemyObjects.Length; i++)
 			{
 				if (i<enemies.Count){
@@ -111,7 +110,6 @@ public class BattleSystem : MonoBehaviour {
 			}
 			
 		}
-		
 		private BattleAction getUserAssignedAction(PlayerBattleEntity player)
 		{
 			/*System.out.printf("It is %s's turn.\n", player.getName());
