@@ -48,8 +48,6 @@ public class DamageTracker : MonoBehaviour {
 		else{
 			currentXScale = DamageIndicator.transform.localScale.x;
 			currentYScale = DamageIndicator.transform.localScale.y;
-			Debug.Log(currentXScale);
-			Debug.Log(currentYScale);
 			DamageIndicator.transform.localScale = new Vector3(currentXScale + growAmount, currentYScale + growAmount, DamageIndicator.transform.localScale.z);
 		}
 		

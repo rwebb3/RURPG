@@ -34,8 +34,9 @@ public class GameData {
 		
 		players = new List<PlayerBattleEntity>();
 		/*public PlayerBattleEntity(int hp, int sp, int atk, int def, int spd, int maxHP, int maxSP, string entityName)*/
-		players.Add(new PlayerBattleEntity(5, 3, 10, 10, 10, 10, 10, "Howard", "Sprites/RED")); 
-		
+		players.Add(new PlayerBattleEntity(5, 3, 10, 10, 10, 10, 10, "Howard", "Sprites/RED"));
+		players.Add(new PlayerBattleEntity(5, 3, 10, 10, 10, 10, 10, "Steve", "Sprites/RED"));
+
 
 	}
 	

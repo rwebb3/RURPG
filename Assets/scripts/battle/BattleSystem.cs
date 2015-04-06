@@ -8,31 +8,58 @@ public class BattleSystem : MonoBehaviour {
 		public List<EnemyBattleEntity> enemies;
 		private List<PlayerBattleEntity> playerCharacters;
 		private bool battleOver = false;
+		private GameObject currentPlayerActions;
+		private GameObject[] playerObjects;
+		private GameObject[] enemyObjects;
+		public GameObject player1Actions;
+		public GameObject player2Actions;
+		//public string buttonSelected;
 
 		void Start(){
 			alertText.SetActive(false);
 			alertText.SetActive(true);
 			alertText.GetComponent<Text>().text = "test";
+
+
+			///testing list
+			List<EnemyBattleEntity> enemyList = new List<EnemyBattleEntity>();
+			//EnemyBattleEntity(int hp, int sp, int atk, int def, int spd, int maxHP, int maxSP, string entityName) 
+			enemyList.Add(new EnemyBattleEntity(3, 2, 2, 4, 4, 5, 4, "Robot", "Sprites/silverrobotontracks_battle"));
+			enemyList.Add(new EnemyBattleEntity(3, 2, 2, 4, 4, 5, 4, "Robot", "Sprites/silverrobotontracks_battle"));
+			enemyList.Add(new EnemyBattleEntity(3, 2, 2, 4, 4, 5, 4, "Robot", "Sprites/silverrobotontracks_battle"));
+			enemyList.Add(new EnemyBattleEntity(3, 2, 2, 4, 4, 5, 4, "Robot", "Sprites/RED"));
+			setUpBattle(enemyList);
 		}
 		public void setUpBattle(List<EnemyBattleEntity> _enemies){
-			playerCharacters = GameData.current.players;
+			//character list for testing
+			List<PlayerBattleEntity> players = new List<PlayerBattleEntity>();
+			/*public PlayerBattleEntity(int hp, int sp, int atk, int def, int spd, int maxHP, int maxSP, string entityName)*/
+			players.Add(new PlayerBattleEntity(5, 3, 10, 10, 10, 10, 10, "Howard", "Sprites/RED"));
+			players.Add(new PlayerBattleEntity(5, 3, 10, 10, 10, 10, 10, "Steve", "Sprites/RED"));
+
+
+			playerCharacters = players; //GameData.current.players;
+
+
 			this.enemies = new List<EnemyBattleEntity>(_enemies);
 			Debug.Log("BS enemy entities: " + enemies.Count);
 			initBattle();
+			//doBattle();
 		}
 		
 		private void initBattle()
 		{
-			GameObject[] playerObjects = GameObject.FindGameObjectsWithTag("BattlePlayer");
+			playerObjects = GameObject.FindGameObjectsWithTag("BattlePlayer");
 			for (int i = 0; i < playerObjects.Length; i++)
 			{
 			  if (i<playerCharacters.Count){
 			  	Debug.Log(playerObjects[i].name);
 			  	playerObjects[i].GetComponent<SpriteRenderer>().sprite = playerCharacters[i].getSprite(); 
+
 			}
 			}
 			
-			GameObject[] enemyObjects = GameObject.FindGameObjectsWithTag("BattleEnemy");
+			enemyObjects = GameObject.FindGameObjectsWithTag("BattleEnemy");
 			for (int i = 0; i < enemyObjects.Length; i++)
 			{
 				if (i<enemies.Count){
@@ -52,7 +79,7 @@ public class BattleSystem : MonoBehaviour {
 		{
 			while (!battleOver)
 			{
-				doBattleRound();
+				//doBattleRound();
 			}
 			
 			//System.out.println("The battle is over!");
@@ -84,18 +111,39 @@ public class BattleSystem : MonoBehaviour {
 				battleOver = true;
 			}
 		}
+
+		public void setAction(BattleAction theAction){
+			theAction.doAction();
+			checkForDeaths();
+		}
 		
-		private void doBattleRound()
+		private void Update()
 		{
-			
-			
-			foreach (PlayerBattleEntity playerCharacter in playerCharacters)
+			for (int i = 0; i < playerCharacters.Count; i++)
 			{
-				if (playerCharacter.isMyTurn())
+				if (playerCharacters[i].isMyTurn())
 				{
-					BattleAction action = getUserAssignedAction(playerCharacter);
-					action.doAction();
-					checkForDeaths();
+					//if it's PC1's turn ...
+					if (i == 0){
+						currentPlayerActions = player1Actions;
+						currentPlayerActions.SetActive(true);
+					}
+					//if it's PC2's turn ... 
+					else if(i == 1){
+						currentPlayerActions = player2Actions;
+						currentPlayerActions.SetActive(true);
+					}
+
+					if (currentPlayerActions.GetComponent<RadioButtons>().currentValue.Equals("AttackButton")){
+						foreach (GameObject anEnemy in enemyObjects){
+							anEnemy.SendMessage("hilite");
+						}
+					}
+					//Debug.Log (i);
+					//getUserAssignedAction(playerCharacters[i]);
+					//action.doAction();
+					//checkForDeaths();
+					
 				}
 			}
 			
@@ -103,15 +151,16 @@ public class BattleSystem : MonoBehaviour {
 			{
 				if (enemy.isMyTurn())
 				{
-					BattleAction action = enemy.getEnemyAction(playerCharacters, enemies);
+					/*BattleAction action = enemy.getEnemyAction(playerCharacters, enemies);
 					action.doAction();
-					checkForDeaths();
+					checkForDeaths();*/
 				}
 			}
 			
 		}
 		private BattleAction getUserAssignedAction(PlayerBattleEntity player)
 		{
+			
 			/*System.out.printf("It is %s's turn.\n", player.getName());
 			System.out.printf("1. Attack\n");
 			System.out.printf("2. Defend\n");

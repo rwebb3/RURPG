@@ -17,13 +17,10 @@ public class HealthBarBehavior : MonoBehaviour {
 	public void setHealth(float newHealth){
 		this.previousHealth = this.health;
 		this.health = newHealth;
-		Debug.Log ("health: " + health);
-		Debug.Log ("previous:" + previousHealth);
 	}
 	// Update is called once per frame
 	void Update () {
 		tempHealth = Mathf.Lerp(previousHealth, health, Time.time);
-		Debug.Log(tempHealth);
 		float healthPercent = tempHealth/maxHealth;
 		this.transform.localScale = new Vector3(startScale.x * healthPercent, startScale.y, startScale.z);
 	}
