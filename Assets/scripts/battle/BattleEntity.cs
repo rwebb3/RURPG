@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 [System.Serializable]
-public abstract class BattleEntity {
+public class BattleEntity : MonoBehaviour {
 	
 	private int hp;
 	private int sp;
@@ -15,11 +15,12 @@ public abstract class BattleEntity {
 	private int maxHP;
 	private int maxSP;
 	private string entityName;
+
 	private Timer timer;
 	private List<StatusEffect> statusEffects;
 	private string sprite;
 	
-	public BattleEntity(int hp, int sp, int atk, int def, int spd, int maxHP, int maxSP, string entityName, string sprite) 
+	public void setupEntity(int hp, int sp, int atk, int def, int spd, int maxHP, int maxSP, string entityName, string sprite) 
 	{
 		this.hp = hp;
 		this.sp = sp;
@@ -169,10 +170,10 @@ public abstract class BattleEntity {
 	
 	
 	
-	public bool isMyTurn()
+	/*public bool isMyTurn()
 	{
 		return this.timer.tick();
-	}
+	}*/
 	
 	public void addStatusEffect(StatusEffect statusEffect)
 	{

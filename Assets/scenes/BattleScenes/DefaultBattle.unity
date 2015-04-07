@@ -184,13 +184,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 89834458}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79a2c9f65da05584c9d63f2000411555, type: 3}
+  m_Script: {fileID: 11500000, guid: 7304ba605cfd64b4b88ed75bba9568de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alertText: {fileID: 418188489}
-  enemies: []
-  player1Actions: {fileID: 1396718911}
-  player2Actions: {fileID: 816088006}
+  encounterEnemyStats: []
 --- !u!1 &94772504
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +199,6 @@ GameObject:
   - 222: {fileID: 94772509}
   - 114: {fileID: 94772508}
   - 114: {fileID: 94772507}
-  - 114: {fileID: 94772506}
   m_Layer: 5
   m_Name: AttackButton
   m_TagString: BattleScene
@@ -228,17 +224,6 @@ RectTransform:
   m_AnchoredPosition: {x: 43.2000008, y: -229.600006}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: .5, y: .5}
---- !u!114 &94772506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 94772504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bddf13cf90c6d64e83e5b89413480f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &94772507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,8 +263,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 94772506}
-        m_MethodName: EndButton
+      - m_Target: {fileID: 0}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -561,6 +546,7 @@ GameObject:
   - 4: {fileID: 193775193}
   - 212: {fileID: 193775192}
   - 114: {fileID: 193775194}
+  - 114: {fileID: 193775195}
   m_Layer: 0
   m_Name: Enemy4
   m_TagString: BattleEnemy
@@ -615,6 +601,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 575caf46ab359394d94818d728707113, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &193775195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 193775191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 936c31c23bbb884439a499e805712ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &196048890
@@ -1018,7 +1015,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 707460924}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 223.621445, y: -194.691437, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 89834459}
@@ -1042,6 +1039,7 @@ GameObject:
   - 4: {fileID: 714945589}
   - 212: {fileID: 714945588}
   - 114: {fileID: 714945590}
+  - 114: {fileID: 714945591}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: BattleEnemy
@@ -1098,6 +1096,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 575caf46ab359394d94818d728707113, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &714945591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 714945587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 936c31c23bbb884439a499e805712ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &756607801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,7 +1118,6 @@ GameObject:
   - 222: {fileID: 756607806}
   - 114: {fileID: 756607805}
   - 114: {fileID: 756607804}
-  - 114: {fileID: 756607803}
   m_Layer: 5
   m_Name: DefendButton
   m_TagString: BattleScene
@@ -1135,17 +1143,6 @@ RectTransform:
   m_AnchoredPosition: {x: 102.099998, y: -229.600006}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: .5, y: .5}
---- !u!114 &756607803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 756607801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bddf13cf90c6d64e83e5b89413480f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &756607804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1185,8 +1182,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 756607803}
-        m_MethodName: EndButton
+      - m_Target: {fileID: 0}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1269,7 +1266,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 772560502}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bddf13cf90c6d64e83e5b89413480f6, type: 3}
   m_Name: 
@@ -1313,8 +1310,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 772560504}
-        m_MethodName: EndButton
+      - m_Target: {fileID: 0}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1364,6 +1361,8 @@ GameObject:
   - 4: {fileID: 782992545}
   - 212: {fileID: 782992547}
   - 114: {fileID: 782992546}
+  - 114: {fileID: 782992548}
+  - 114: {fileID: 782992549}
   m_Layer: 0
   m_Name: Player2
   m_TagString: BattlePlayer
@@ -1397,7 +1396,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageIndicator: {fileID: 1040456649}
   HealthBar: {fileID: 963335208}
-  damageToTake: -5
 --- !u!212 &782992547
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1424,6 +1422,28 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f707a8966def03749bcefa327dc0f9ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &782992548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 782992544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 575caf46ab359394d94818d728707113, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &782992549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 782992544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 936c31c23bbb884439a499e805712ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &803828721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1434,6 +1454,7 @@ GameObject:
   - 4: {fileID: 803828723}
   - 212: {fileID: 803828722}
   - 114: {fileID: 803828724}
+  - 114: {fileID: 803828725}
   m_Layer: 0
   m_Name: Enemy3
   m_TagString: BattleEnemy
@@ -1488,6 +1509,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 575caf46ab359394d94818d728707113, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &803828725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 803828721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 936c31c23bbb884439a499e805712ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &816088006
@@ -1732,7 +1764,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 922911055}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bddf13cf90c6d64e83e5b89413480f6, type: 3}
   m_Name: 
@@ -1776,8 +1808,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 922911057}
-        m_MethodName: EndButton
+      - m_Target: {fileID: 0}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1827,6 +1859,8 @@ GameObject:
   - 4: {fileID: 925169873}
   - 212: {fileID: 925169874}
   - 114: {fileID: 925169875}
+  - 114: {fileID: 925169876}
+  - 114: {fileID: 925169877}
   m_Layer: 0
   m_Name: Player1
   m_TagString: BattlePlayer
@@ -1886,7 +1920,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageIndicator: {fileID: 1040484909}
   HealthBar: {fileID: 216249459}
-  damageToTake: 30
+--- !u!114 &925169876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 925169872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 575caf46ab359394d94818d728707113, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &925169877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 925169872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 936c31c23bbb884439a499e805712ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963335208
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,7 +2103,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 314.399994, y: -1029.09998}
+  m_AnchoredPosition: {x: 94.1999969, y: -836.900024}
   m_SizeDelta: {x: 22.0499992, y: 16.6000061}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1040456651
@@ -2114,7 +2169,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 245.300003, y: -1029.09998}
+  m_AnchoredPosition: {x: 23.7999992, y: -837.299988}
   m_SizeDelta: {x: 22.0499992, y: 16.6000061}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1040484912
@@ -2876,6 +2931,7 @@ GameObject:
   - 4: {fileID: 1963470461}
   - 212: {fileID: 1963470460}
   - 114: {fileID: 1963470462}
+  - 114: {fileID: 1963470463}
   m_Layer: 0
   m_Name: Enemy2
   m_TagString: BattleEnemy
@@ -2932,6 +2988,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 575caf46ab359394d94818d728707113, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1963470463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1963470459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 936c31c23bbb884439a499e805712ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1975888217
 GameObject:
   m_ObjectHideFlags: 0
@@ -2943,7 +3010,6 @@ GameObject:
   - 222: {fileID: 1975888222}
   - 114: {fileID: 1975888221}
   - 114: {fileID: 1975888220}
-  - 114: {fileID: 1975888219}
   m_Layer: 5
   m_Name: SkillButton
   m_TagString: BattleScene
@@ -2969,17 +3035,6 @@ RectTransform:
   m_AnchoredPosition: {x: 73.5, y: -229.600006}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: .5, y: .5}
---- !u!114 &1975888219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1975888217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bddf13cf90c6d64e83e5b89413480f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1975888220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3019,8 +3074,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1975888219}
-        m_MethodName: EndButton
+      - m_Target: {fileID: 0}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

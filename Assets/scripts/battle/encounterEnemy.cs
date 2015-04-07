@@ -5,7 +5,7 @@ using System.Collections;
 public class encounterEnemy : MonoBehaviour {
 	public GameObject mainObject;
 	
-	private List<EnemyBattleEntity> theEnemies;
+	private List<EntityStats> theEnemies;
 	private GameObject bm;
 
 	void OnTriggerEnter2D(Collider2D other){
@@ -20,6 +20,6 @@ public class encounterEnemy : MonoBehaviour {
 	
 	void OnDisable(){
 		bm = GameObject.FindGameObjectWithTag("BattleManager");
-		bm.GetComponent<BattleSystem>().setUpBattle(theEnemies);
+		//bm.GetComponent<BattleSystem>().setUpBattle(theEnemies);
 	}
 }

@@ -54,7 +54,7 @@ public class BattleSystem : MonoBehaviour {
 			{
 			  if (i<playerCharacters.Count){
 			  	Debug.Log(playerObjects[i].name);
-			  	playerObjects[i].GetComponent<SpriteRenderer>().sprite = playerCharacters[i].getSprite(); 
+			  	playerObjects[i].GetComponent<SpriteRenderer>().sprite = playerObjects[i].GetComponent<BattleEntity>().getSprite(); 
 
 			}
 			}
@@ -64,7 +64,7 @@ public class BattleSystem : MonoBehaviour {
 			{
 				if (i<enemies.Count){
 					Debug.Log(enemyObjects[i].name);
-					enemyObjects[i].GetComponent<SpriteRenderer>().sprite = enemies[i].getSprite();
+					enemyObjects[i].GetComponent<SpriteRenderer>().sprite = enemyObjects[i].GetComponent<BattleEntity>().getSprite();
 				}
 				else{
 					enemyObjects[i].SetActive(false);
@@ -79,7 +79,7 @@ public class BattleSystem : MonoBehaviour {
 		{
 			while (!battleOver)
 			{
-				//doBattleRound();
+				doBattleRound();
 			}
 			
 			//System.out.println("The battle is over!");
@@ -117,7 +117,7 @@ public class BattleSystem : MonoBehaviour {
 			checkForDeaths();
 		}
 		
-		private void Update()
+		private void doBattleRound()
 		{
 			for (int i = 0; i < playerCharacters.Count; i++)
 			{
@@ -133,12 +133,33 @@ public class BattleSystem : MonoBehaviour {
 						currentPlayerActions = player2Actions;
 						currentPlayerActions.SetActive(true);
 					}
+					Debug.Log (i);
 
 					if (currentPlayerActions.GetComponent<RadioButtons>().currentValue.Equals("AttackButton")){
 						foreach (GameObject anEnemy in enemyObjects){
 							anEnemy.SendMessage("hilite");
 						}
+						foreach (GameObject aPlayer in playerObjects){
+							aPlayer.SendMessage("hilite");
+						}
 					}
+					else if(currentPlayerActions.GetComponent<RadioButtons>().currentValue.Equals("SkillButton")){
+						foreach (GameObject anEnemy in enemyObjects){
+							anEnemy.SendMessage("nohilite");
+						}
+						foreach (GameObject aPlayer in playerObjects){
+							aPlayer.SendMessage("hilite");
+						}
+					}
+					else{
+						foreach(GameObject anEnemy in enemyObjects){
+							anEnemy.SendMessage ("nohilite");
+						}
+						foreach (GameObject aPlayer in playerObjects){
+							aPlayer.SendMessage("nohilite");
+						}
+					}
+
 					//Debug.Log (i);
 					//getUserAssignedAction(playerCharacters[i]);
 					//action.doAction();
@@ -160,6 +181,7 @@ public class BattleSystem : MonoBehaviour {
 		}
 		private BattleAction getUserAssignedAction(PlayerBattleEntity player)
 		{
+		//while(true){ int f = 1;}
 			
 			/*System.out.printf("It is %s's turn.\n", player.getName());
 			System.out.printf("1. Attack\n");

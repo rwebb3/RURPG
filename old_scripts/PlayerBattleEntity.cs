@@ -2,7 +2,7 @@
 using System.Collections;
 
 [System.Serializable]
-public class PlayerBattleEntity : BattleEntity
+public class PlayerBattleEntity : MonoBehaviour
 {
 	
 	public PlayerBattleEntity(int hp, int sp, int atk, int def, int spd, int maxHP, int maxSP, string entityName, string sprite) 

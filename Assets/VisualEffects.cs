@@ -13,6 +13,11 @@ public class VisualEffects : MonoBehaviour {
 			hilited = true;
 		}
 	}
+	void nohilite(){
+		if(hilited){
+			hilited = false;
+		}
+	}
 
 	// Update is called once per frame
 	void Update () {

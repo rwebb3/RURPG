@@ -11,7 +11,7 @@ public class GameData {
 	public string name;
 	public List<Level> levels;
 	
-	public List<PlayerBattleEntity> players;
+	public List<EntityStats> players;
 	
 	Level muse;
 	Level davis;
@@ -32,10 +32,10 @@ public class GameData {
 		levels.Add(davis);
 		levels.Add (tutorial);
 		
-		players = new List<PlayerBattleEntity>();
+		players = new List<EntityStats>();
 		/*public PlayerBattleEntity(int hp, int sp, int atk, int def, int spd, int maxHP, int maxSP, string entityName)*/
-		players.Add(new PlayerBattleEntity(5, 3, 10, 10, 10, 10, 10, "Howard", "Sprites/RED"));
-		players.Add(new PlayerBattleEntity(5, 3, 10, 10, 10, 10, 10, "Steve", "Sprites/RED"));
+		players.Add(new EntityStats(5, 3, 10, 10, 10, 10, 10, "Howard", "Sprites/RED"));
+		players.Add(new EntityStats(5, 3, 10, 10, 10, 10, 10, "Steve", "Sprites/RED"));
 
 
 	}
