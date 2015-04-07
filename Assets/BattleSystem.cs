@@ -11,6 +11,7 @@ public class BattleSystem : MonoBehaviour {
 	private GameObject[] enemyObjects; //enemy objects in scene
 
 	private List<GameObject> allBattleEntities; //battle entities to be ordered by speed
+	private int entityTurn; //which entities turn it currently is.
 
 	// Use this for initialization
 	void Start () {
@@ -76,12 +77,18 @@ public class BattleSystem : MonoBehaviour {
 		foreach (GameObject anEnemy in GameObject.FindGameObjectsWithTag("BattleEnemy")){
 			allBattleEntities.Add(anEnemy);
 		}
+		//sort the battle entities by speed for turn order
+		allBattleEntities.Sort((x, y) => y.GetComponent<BattleEntity>().getBase_spd().CompareTo(x.GetComponent<BattleEntity>().getBase_spd()));
+		
+		entityTurn = 0;
+		allBattleEntities[entityTurn].SendMessage("takeTurn");
+		
 	}
+	
 	
 	// Update is called once per frame
 	void Update () {
-		//sort the battle entities by speed for turn order
-		allBattleEntities.Sort((x, y) => y.GetComponent<BattleEntity>().getBase_spd().CompareTo(x.GetComponent<BattleEntity>().getBase_spd()));
+		
 
 	}
 }

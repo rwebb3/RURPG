@@ -64,22 +64,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &120468
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 420468}
-  - 60: {fileID: 6020468}
-  m_Layer: 0
-  m_Name: Collision
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &162900
 GameObject:
   m_ObjectHideFlags: 1
@@ -132,6 +116,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &183726
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 410316}
+  - 60: {fileID: 6067014}
+  m_Layer: 0
+  m_Name: Collision
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -156,7 +156,7 @@ Transform:
   m_Children:
   - {fileID: 464130}
   - {fileID: 400000}
-  - {fileID: 420468}
+  - {fileID: 486998}
   m_Father: {fileID: 462906}
   m_RootOrder: 1
 --- !u!4 &400008
@@ -170,21 +170,21 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 462900}
-  - {fileID: 486998}
+  - {fileID: 410316}
   m_Father: {fileID: 462906}
   m_RootOrder: 0
---- !u!4 &420468
+--- !u!4 &410316
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 120468}
+  m_GameObject: {fileID: 183726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 400004}
-  m_RootOrder: 2
+  m_Father: {fileID: 400008}
+  m_RootOrder: 1
 --- !u!4 &462900
 Transform:
   m_ObjectHideFlags: 1
@@ -233,8 +233,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 400008}
-  m_RootOrder: 1
+  m_Father: {fileID: 400004}
+  m_RootOrder: 2
 --- !u!23 &2300000
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -328,12 +328,113 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164130}
   m_Mesh: {fileID: 4300008, guid: e6bb8c30a34b97548a24cd4066b5d745, type: 3}
---- !u!60 &6020468
+--- !u!60 &6067014
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 120468}
+  m_GameObject: {fileID: 183726}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: 239, y: -142}
+      - {x: 224, y: -142}
+      - {x: 224, y: -206}
+      - {x: 239, y: -206}
+    - - {x: 63, y: -143}
+      - {x: 47, y: -143}
+      - {x: 47, y: -207}
+      - {x: 63, y: -207}
+    - - {x: 335, y: -203}
+      - {x: 320, y: -203}
+      - {x: 320, y: -207}
+      - {x: 335, y: -207}
+    - - {x: 351, y: -203}
+      - {x: 336, y: -203}
+      - {x: 336, y: -207}
+      - {x: 351, y: -207}
+    - - {x: 367, y: -203}
+      - {x: 352, y: -203}
+      - {x: 352, y: -207}
+      - {x: 367, y: -207}
+    - - {x: 383, y: -203}
+      - {x: 368, y: -203}
+      - {x: 368, y: -207}
+      - {x: 383, y: -207}
+    - - {x: 399, y: -203}
+      - {x: 384, y: -203}
+      - {x: 384, y: -207}
+      - {x: 399, y: -207}
+    - - {x: 415, y: -203}
+      - {x: 400, y: -203}
+      - {x: 400, y: -207}
+      - {x: 415, y: -207}
+    - - {x: 431, y: -203}
+      - {x: 416, y: -203}
+      - {x: 416, y: -207}
+      - {x: 431, y: -207}
+    - - {x: 447, y: -203}
+      - {x: 432, y: -203}
+      - {x: 432, y: -207}
+      - {x: 447, y: -207}
+    - - {x: 463, y: -203}
+      - {x: 448, y: -203}
+      - {x: 448, y: -207}
+      - {x: 463, y: -207}
+    - - {x: 175, y: -203}
+      - {x: 160, y: -203}
+      - {x: 160, y: -207}
+      - {x: 175, y: -207}
+    - - {x: 223, y: -203}
+      - {x: 208, y: -203}
+      - {x: 208, y: -207}
+      - {x: 223, y: -207}
+    - - {x: 255, y: -203}
+      - {x: 240, y: -203}
+      - {x: 240, y: -207}
+      - {x: 255, y: -207}
+    - - {x: 303, y: -203}
+      - {x: 288, y: -203}
+      - {x: 288, y: -207}
+      - {x: 303, y: -207}
+    - - {x: 319, y: -203}
+      - {x: 304, y: -203}
+      - {x: 304, y: -207}
+      - {x: 319, y: -207}
+    - - {x: 79, y: -203}
+      - {x: 64, y: -203}
+      - {x: 64, y: -207}
+      - {x: 79, y: -207}
+    - - {x: 95, y: -203}
+      - {x: 80, y: -203}
+      - {x: 80, y: -207}
+      - {x: 95, y: -207}
+    - - {x: 111, y: -203}
+      - {x: 96, y: -203}
+      - {x: 96, y: -207}
+      - {x: 111, y: -207}
+    - - {x: 127, y: -203}
+      - {x: 112, y: -203}
+      - {x: 112, y: -207}
+      - {x: 127, y: -207}
+    - - {x: 143, y: -203}
+      - {x: 128, y: -203}
+      - {x: 128, y: -207}
+      - {x: 143, y: -207}
+    - - {x: 159, y: -203}
+      - {x: 144, y: -203}
+      - {x: 144, y: -207}
+      - {x: 159, y: -207}
+--- !u!60 &6072562
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107304}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -893,107 +994,6 @@ PolygonCollider2D:
       - {x: 144, y: -459}
       - {x: 144, y: -463}
       - {x: 159, y: -463}
---- !u!60 &6072562
-PolygonCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 107304}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: 239, y: -142}
-      - {x: 224, y: -142}
-      - {x: 224, y: -206}
-      - {x: 239, y: -206}
-    - - {x: 63, y: -143}
-      - {x: 47, y: -143}
-      - {x: 47, y: -207}
-      - {x: 63, y: -207}
-    - - {x: 335, y: -203}
-      - {x: 320, y: -203}
-      - {x: 320, y: -207}
-      - {x: 335, y: -207}
-    - - {x: 351, y: -203}
-      - {x: 336, y: -203}
-      - {x: 336, y: -207}
-      - {x: 351, y: -207}
-    - - {x: 367, y: -203}
-      - {x: 352, y: -203}
-      - {x: 352, y: -207}
-      - {x: 367, y: -207}
-    - - {x: 383, y: -203}
-      - {x: 368, y: -203}
-      - {x: 368, y: -207}
-      - {x: 383, y: -207}
-    - - {x: 399, y: -203}
-      - {x: 384, y: -203}
-      - {x: 384, y: -207}
-      - {x: 399, y: -207}
-    - - {x: 415, y: -203}
-      - {x: 400, y: -203}
-      - {x: 400, y: -207}
-      - {x: 415, y: -207}
-    - - {x: 431, y: -203}
-      - {x: 416, y: -203}
-      - {x: 416, y: -207}
-      - {x: 431, y: -207}
-    - - {x: 447, y: -203}
-      - {x: 432, y: -203}
-      - {x: 432, y: -207}
-      - {x: 447, y: -207}
-    - - {x: 463, y: -203}
-      - {x: 448, y: -203}
-      - {x: 448, y: -207}
-      - {x: 463, y: -207}
-    - - {x: 175, y: -203}
-      - {x: 160, y: -203}
-      - {x: 160, y: -207}
-      - {x: 175, y: -207}
-    - - {x: 223, y: -203}
-      - {x: 208, y: -203}
-      - {x: 208, y: -207}
-      - {x: 223, y: -207}
-    - - {x: 255, y: -203}
-      - {x: 240, y: -203}
-      - {x: 240, y: -207}
-      - {x: 255, y: -207}
-    - - {x: 303, y: -203}
-      - {x: 288, y: -203}
-      - {x: 288, y: -207}
-      - {x: 303, y: -207}
-    - - {x: 319, y: -203}
-      - {x: 304, y: -203}
-      - {x: 304, y: -207}
-      - {x: 319, y: -207}
-    - - {x: 79, y: -203}
-      - {x: 64, y: -203}
-      - {x: 64, y: -207}
-      - {x: 79, y: -207}
-    - - {x: 95, y: -203}
-      - {x: 80, y: -203}
-      - {x: 80, y: -207}
-      - {x: 95, y: -207}
-    - - {x: 111, y: -203}
-      - {x: 96, y: -203}
-      - {x: 96, y: -207}
-      - {x: 111, y: -207}
-    - - {x: 127, y: -203}
-      - {x: 112, y: -203}
-      - {x: 112, y: -207}
-      - {x: 127, y: -207}
-    - - {x: 143, y: -203}
-      - {x: 128, y: -203}
-      - {x: 128, y: -207}
-      - {x: 143, y: -207}
-    - - {x: 159, y: -203}
-      - {x: 144, y: -203}
-      - {x: 144, y: -207}
-      - {x: 159, y: -207}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1

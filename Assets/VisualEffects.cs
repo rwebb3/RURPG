@@ -34,6 +34,9 @@ public class VisualEffects : MonoBehaviour {
 			blueness -= .01f;
 			this.transform.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f,1f,blueness,1f);
 		}
-	 }
+	  }
+	  else{
+	  	this.transform.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,1f);
+	  }
    }
 }
