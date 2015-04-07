@@ -85,6 +85,12 @@ public class BattleSystem : MonoBehaviour {
 		
 	}
 	
+	void nextTurn(){
+		entityTurn++;
+		if (entityTurn > allBattleEntities.Count-1){ entityTurn = 0; }
+		allBattleEntities[entityTurn].SendMessage("takeTurn");
+	}
+	
 	
 	// Update is called once per frame
 	void Update () {

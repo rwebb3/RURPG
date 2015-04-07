@@ -24,11 +24,14 @@ public class BattleEntity : MonoBehaviour {
 	private bool myTurn = false;
 	private GameObject[] enemies;
 	private GameObject[] players;
+	private GameObject battleManager;
 	
 	void Start(){
 		if (this.transform.gameObject.tag.Equals("BattlePlayer")){
 			this.playerGUI.SetActive(false);
 		}
+		
+		battleManager = GameObject.FindGameObjectWithTag("BattleManager");
 	}
 	
 	public void setupEntity(int hp, int sp, int atk, int def, int spd, int maxHP, int maxSP, string entityName, string sprite) 
@@ -212,15 +215,34 @@ public class BattleEntity : MonoBehaviour {
 		this.sprite = newSprite;
 	}
 	
-	private void takeTurn(){
+	void takeTurn(){
 		myTurn = true;
+		//Debug.Log (this.transform.gameObject.name);
+		if (this.transform.gameObject.tag.Equals("BattlePlayer")){
+			Debug.Log("here");
+			playerGUI.SetActive(true);
+			if (playerGUI.activeInHierarchy){
+				Debug.Log ("is active");
+			}
+		}
 		enemies = GameObject.FindGameObjectsWithTag("BattleEnemy");
 		players = GameObject.FindGameObjectsWithTag("BattlePlayer");
 	}
 	
+	private void endTurn(){
+		myTurn = false;
+		if(this.transform.gameObject.tag.Equals("BattlePlayer")){
+			playerGUI.GetComponent<RadioButtons>().ForceToValue("AttackButton");
+			playerGUI.SetActive(false);
+			
+		}
+		battleManager.SendMessage("nextTurn");
+	}
+	
 	void Update(){
-		if (myTurn && this.transform.gameObject.tag.Equals("BattlePlayer")){
-			playerGUI.SetActive(true);
+		if (myTurn){
+		   if(this.transform.gameObject.tag.Equals("BattlePlayer")){
+		  // Debug.Log (playerGUI.GetComponent<RadioButtons>().currentValue);
 			if (playerGUI.GetComponent<RadioButtons>().currentValue.Equals("AttackButton")){
 				foreach (GameObject anEnemy in enemies){
 					anEnemy.SendMessage("hilite");
@@ -237,6 +259,15 @@ public class BattleEntity : MonoBehaviour {
 					aPlayer.SendMessage("hilite");
 				}
 			}
+			else if (playerGUI.GetComponent<RadioButtons>().currentValue.Equals("DefendButton")){
+					foreach (GameObject anEnemy in enemies){
+						anEnemy.SendMessage("nohilite");
+					}
+					foreach (GameObject aPlayer in players){
+						aPlayer.SendMessage("nohilite");
+					}
+					endTurn();
+			}
 			else{
 				foreach (GameObject anEnemy in enemies){
 					anEnemy.SendMessage("nohilite");
@@ -246,6 +277,12 @@ public class BattleEntity : MonoBehaviour {
 				}
 			}
 			
+		   }
+		   
+		   else{
+				battleManager.SendMessage("nextTurn");
+		   }
+		   
 		}
 	}
 	
