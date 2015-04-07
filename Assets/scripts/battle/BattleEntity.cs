@@ -219,7 +219,7 @@ public class BattleEntity : MonoBehaviour {
 		myTurn = true;
 		//Debug.Log (this.transform.gameObject.name);
 		if (this.transform.gameObject.tag.Equals("BattlePlayer")){
-			Debug.Log("here");
+			//Debug.Log("here");
 			playerGUI.SetActive(true);
 			if (playerGUI.activeInHierarchy){
 				Debug.Log ("is active");
@@ -232,7 +232,7 @@ public class BattleEntity : MonoBehaviour {
 	private void endTurn(){
 		myTurn = false;
 		if(this.transform.gameObject.tag.Equals("BattlePlayer")){
-			playerGUI.GetComponent<RadioButtons>().ForceToValue("AttackButton");
+			//playerGUI.GetComponent<RadioButtons>().ForceToValue("AttackButton");
 			playerGUI.SetActive(false);
 			
 		}
@@ -242,7 +242,7 @@ public class BattleEntity : MonoBehaviour {
 	void Update(){
 		if (myTurn){
 		   if(this.transform.gameObject.tag.Equals("BattlePlayer")){
-		  // Debug.Log (playerGUI.GetComponent<RadioButtons>().currentValue);
+		  	Debug.Log (playerGUI.GetComponent<RadioButtons>().currentValue);
 			if (playerGUI.GetComponent<RadioButtons>().currentValue.Equals("AttackButton")){
 				foreach (GameObject anEnemy in enemies){
 					anEnemy.SendMessage("hilite");
