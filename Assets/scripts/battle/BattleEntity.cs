@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 [System.Serializable]
 public class BattleEntity : MonoBehaviour {
+	List<GameObject> playerActionButtons = new List<GameObject>();
 	public GameObject playerGUI; //the usable abilities by this character
+	//private UIPanel playerGUI; //the actual panel
 	
 	private int hp;
 	private int sp;
@@ -24,16 +27,14 @@ public class BattleEntity : MonoBehaviour {
 	private bool myTurn = false;
 	private GameObject[] enemies;
 	private GameObject[] players;
-	private GameObject battleManager;
-	
+	public GameObject battleManager;
+
 	void Start(){
 		if (this.transform.gameObject.tag.Equals("BattlePlayer")){
-			this.playerGUI.SetActive(false);
+			setupListOfButtons();
 		}
-		
-		battleManager = GameObject.FindGameObjectWithTag("BattleManager");
 	}
-	
+
 	public void setupEntity(int hp, int sp, int atk, int def, int spd, int maxHP, int maxSP, string entityName, string sprite) 
 	{
 		this.hp = hp;
@@ -214,25 +215,31 @@ public class BattleEntity : MonoBehaviour {
 	public void setSprite(string newSprite){
 		this.sprite = newSprite;
 	}
-	
+
+	private void setupListOfButtons(){
+		foreach(Transform child in playerGUI.transform){
+			if (child.CompareTag("PlayerActionButton")){
+				playerActionButtons.Add(child.gameObject);
+			}
+		}
+	}
+
 	void takeTurn(){
 		myTurn = true;
-		//Debug.Log (this.transform.gameObject.name);
+		Debug.Log(this.transform.gameObject.name);
 		if (this.transform.gameObject.tag.Equals("BattlePlayer")){
-			//Debug.Log("here");
 			playerGUI.SetActive(true);
-			if (playerGUI.activeInHierarchy){
-				Debug.Log ("is active");
-			}
+			playerGUI.GetComponent<RadioButtons>().ForceToValue("AttackButton");
 		}
 		enemies = GameObject.FindGameObjectsWithTag("BattleEnemy");
 		players = GameObject.FindGameObjectsWithTag("BattlePlayer");
 	}
 	
 	private void endTurn(){
+		Debug.Log(this.transform.gameObject.name + ": end turn");
 		myTurn = false;
 		if(this.transform.gameObject.tag.Equals("BattlePlayer")){
-			//playerGUI.GetComponent<RadioButtons>().ForceToValue("AttackButton");
+			playerGUI.GetComponent<RadioButtons>().ForceToValue("AttackButton");
 			playerGUI.SetActive(false);
 			
 		}
@@ -240,9 +247,10 @@ public class BattleEntity : MonoBehaviour {
 	}
 	
 	void Update(){
+		//Debug.Log(myTurn);
 		if (myTurn){
 		   if(this.transform.gameObject.tag.Equals("BattlePlayer")){
-		  	Debug.Log (playerGUI.GetComponent<RadioButtons>().currentValue);
+				//Debug.Log(playerGUI.GetComponent<RadioButtons>().currentValue);
 			if (playerGUI.GetComponent<RadioButtons>().currentValue.Equals("AttackButton")){
 				foreach (GameObject anEnemy in enemies){
 					anEnemy.SendMessage("hilite");
@@ -266,7 +274,7 @@ public class BattleEntity : MonoBehaviour {
 					foreach (GameObject aPlayer in players){
 						aPlayer.SendMessage("nohilite");
 					}
-					endTurn();
+					this.endTurn();
 			}
 			else{
 				foreach (GameObject anEnemy in enemies){
@@ -280,7 +288,9 @@ public class BattleEntity : MonoBehaviour {
 		   }
 		   
 		   else{
-				battleManager.SendMessage("nextTurn");
+				//Debug.Log("enemy turn");
+				this.endTurn();
+				//battleManager.SendMessage("nextTurn");
 		   }
 		   
 		}

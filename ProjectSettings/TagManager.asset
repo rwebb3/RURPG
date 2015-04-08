@@ -13,6 +13,7 @@ TagManager:
   - BattleManager
   - BattlePlayer
   - BattleEnemy
+  - PlayerActionButton
   layers:
   - Default
   - TransparentFX
