@@ -28,8 +28,11 @@ public class BattleEntity : MonoBehaviour {
 	private GameObject[] enemies;
 	private GameObject[] players;
 	public GameObject battleManager;
+	private Text alertMessageBox;
 
 	void Start(){
+		alertMessageBox = GameObject.FindGameObjectWithTag("AlertText").GetComponent<Text>();
+		//Debug.Log(alertMessageBox.text);
 		if (this.transform.gameObject.tag.Equals("BattlePlayer")){
 			setupListOfButtons();
 		}
@@ -225,18 +228,21 @@ public class BattleEntity : MonoBehaviour {
 	}
 
 	void takeTurn(){
+		//set things up
+		if (this.alertMessageBox == null){
+			this.alertMessageBox = GameObject.FindGameObjectWithTag("AlertText").GetComponent<Text>();
+		}
 		myTurn = true;
-		Debug.Log(this.transform.gameObject.name);
 		if (this.transform.gameObject.tag.Equals("BattlePlayer")){
 			playerGUI.SetActive(true);
 			playerGUI.GetComponent<RadioButtons>().ForceToValue("AttackButton");
 		}
 		enemies = GameObject.FindGameObjectsWithTag("BattleEnemy");
 		players = GameObject.FindGameObjectsWithTag("BattlePlayer");
+		alertMessageBox.text = this.entityName + "'s turn";
 	}
 	
 	private void endTurn(){
-		Debug.Log(this.transform.gameObject.name + ": end turn");
 		myTurn = false;
 		if(this.transform.gameObject.tag.Equals("BattlePlayer")){
 			playerGUI.GetComponent<RadioButtons>().ForceToValue("AttackButton");
@@ -247,10 +253,8 @@ public class BattleEntity : MonoBehaviour {
 	}
 	
 	void Update(){
-		//Debug.Log(myTurn);
 		if (myTurn){
 		   if(this.transform.gameObject.tag.Equals("BattlePlayer")){
-				//Debug.Log(playerGUI.GetComponent<RadioButtons>().currentValue);
 			if (playerGUI.GetComponent<RadioButtons>().currentValue.Equals("AttackButton")){
 				foreach (GameObject anEnemy in enemies){
 					anEnemy.SendMessage("hilite");
