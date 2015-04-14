@@ -252,6 +252,14 @@ public class BattleEntity : MonoBehaviour {
 		battleManager.SendMessage("nextTurn");
 	}
 	
+	private void basicAttack(GameObject thingToAttack){
+		if (this.transform.gameObject.tag.Equals("BattlePlayer")){
+			Debug.Log(thingToAttack.transform.name);
+			this.endTurn();
+		}
+	}
+		
+	
 	void Update(){
 		if (myTurn){
 		   if(this.transform.gameObject.tag.Equals("BattlePlayer")){
@@ -261,6 +269,16 @@ public class BattleEntity : MonoBehaviour {
 				}
 				foreach (GameObject aPlayer in players){
 					aPlayer.SendMessage("nohilite");
+				}
+				if (Input.GetMouseButtonDown(0)) {
+					Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+					RaycastHit2D hit = Physics2D.Raycast(Input.mousePosition, -Vector2.up);
+					Debug.Log("hit: " + hit.transform.name);
+					Debug.Log("mouse position: " + Input.mousePosition);
+					if (hit.collider != null && hit.transform.tag.Equals("BattleEnemy")) {
+						Debug.Log("Enemy Hit");
+						basicAttack(hit.transform.gameObject);
+					}
 				}
 			}
 			else if (playerGUI.GetComponent<RadioButtons>().currentValue.Equals("SkillButton")){
@@ -299,6 +317,4 @@ public class BattleEntity : MonoBehaviour {
 		   
 		}
 	}
-	
-	
 }

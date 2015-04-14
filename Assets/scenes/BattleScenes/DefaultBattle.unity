@@ -559,6 +559,8 @@ GameObject:
   - 212: {fileID: 193775192}
   - 114: {fileID: 193775194}
   - 114: {fileID: 193775195}
+  - 61: {fileID: 193775197}
+  - 50: {fileID: 193775196}
   m_Layer: 0
   m_Name: Enemy4
   m_TagString: BattleEnemy
@@ -629,6 +631,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerGUI: {fileID: 0}
   battleManager: {fileID: 89834458}
+--- !u!50 &193775196
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 193775191}
+  m_Mass: 500000
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+--- !u!61 &193775197
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 193775191}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: .319999993, y: .319999993}
 --- !u!1 &196048890
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,6 +1501,8 @@ GameObject:
   - 212: {fileID: 714945588}
   - 114: {fileID: 714945590}
   - 114: {fileID: 714945591}
+  - 61: {fileID: 714945593}
+  - 50: {fileID: 714945592}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: BattleEnemy
@@ -1511,7 +1543,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 714945587}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.2785492, y: 110.49144, z: 0}
+  m_LocalPosition: {x: 44.2000008, y: 110.5, z: 0}
   m_LocalScale: {x: 65, y: 90, z: 1}
   m_Children:
   - {fileID: 1064119410}
@@ -1541,6 +1573,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerGUI: {fileID: 0}
   battleManager: {fileID: 89834458}
+--- !u!50 &714945592
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 714945587}
+  m_Mass: 500000
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+--- !u!61 &714945593
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 714945587}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: .319999993, y: .319999993}
 --- !u!1 &782992544
 GameObject:
   m_ObjectHideFlags: 0
@@ -1553,6 +1613,8 @@ GameObject:
   - 114: {fileID: 782992546}
   - 114: {fileID: 782992548}
   - 114: {fileID: 782992549}
+  - 50: {fileID: 782992551}
+  - 61: {fileID: 782992550}
   m_Layer: 0
   m_Name: Player2
   m_TagString: BattlePlayer
@@ -1636,6 +1698,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerGUI: {fileID: 816088006}
   battleManager: {fileID: 89834458}
+--- !u!61 &782992550
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 782992544}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: .230000004, y: .439999998}
+--- !u!50 &782992551
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 782992544}
+  m_Mass: 1e+06
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1 &803828721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1647,6 +1737,8 @@ GameObject:
   - 212: {fileID: 803828722}
   - 114: {fileID: 803828724}
   - 114: {fileID: 803828725}
+  - 61: {fileID: 803828727}
+  - 50: {fileID: 803828726}
   m_Layer: 0
   m_Name: Enemy3
   m_TagString: BattleEnemy
@@ -1687,7 +1779,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 803828721}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.7785492, y: 127.691437, z: 0}
+  m_LocalPosition: {x: 18.3999996, y: 128.100006, z: 0}
   m_LocalScale: {x: 65, y: 90, z: 1}
   m_Children:
   - {fileID: 1301699871}
@@ -1717,6 +1809,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerGUI: {fileID: 0}
   battleManager: {fileID: 89834458}
+--- !u!50 &803828726
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 803828721}
+  m_Mass: 500000
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+--- !u!61 &803828727
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 803828721}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: .319999993, y: .319999993}
 --- !u!1 &816088006
 GameObject:
   m_ObjectHideFlags: 0
@@ -2117,6 +2237,8 @@ GameObject:
   - 114: {fileID: 925169875}
   - 114: {fileID: 925169876}
   - 114: {fileID: 925169877}
+  - 50: {fileID: 925169879}
+  - 61: {fileID: 925169878}
   m_Layer: 0
   m_Name: Player1
   m_TagString: BattlePlayer
@@ -2200,6 +2322,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerGUI: {fileID: 1396718911}
   battleManager: {fileID: 89834458}
+--- !u!61 &925169878
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 925169872}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: .230000004, y: .439999998}
+--- !u!50 &925169879
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 925169872}
+  m_Mass: 1e+06
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1 &963335208
 GameObject:
   m_ObjectHideFlags: 0
@@ -3265,6 +3415,8 @@ GameObject:
   - 212: {fileID: 1963470460}
   - 114: {fileID: 1963470462}
   - 114: {fileID: 1963470463}
+  - 61: {fileID: 1963470465}
+  - 50: {fileID: 1963470464}
   m_Layer: 0
   m_Name: Enemy2
   m_TagString: BattleEnemy
@@ -3335,6 +3487,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerGUI: {fileID: 0}
   battleManager: {fileID: 89834458}
+--- !u!50 &1963470464
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1963470459}
+  m_Mass: 500000
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+--- !u!61 &1963470465
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1963470459}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: .319999993, y: .319999993}
 --- !u!1 &2098215190
 GameObject:
   m_ObjectHideFlags: 0
