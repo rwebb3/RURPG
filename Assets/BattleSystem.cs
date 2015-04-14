@@ -17,8 +17,9 @@ public class BattleSystem : MonoBehaviour {
 	void Start () {
 		//a list of characters for testing
 		List<EntityStats> players = new List<EntityStats>();
-		players.Add(new EntityStats(5, 3, 10, 10, 10, 10, 10, "Howard", "Sprites/RED"));
-		players.Add(new EntityStats(5, 3, 10, 10, 10, 10, 10, "Steve", "Sprites/RED"));
+		players.Add(new EntityStats(5, 3, 10, 10, 10, 10, 10, "Steve", "Sprites/mustrumridcully_back"));
+		players.Add(new EntityStats(5, 3, 10, 10, 10, 10, 10, "Howard", "Sprites/RED_back"));
+		
 
 		//give all player entitiy objects their previously saved stats.
 		savedPlayerStats = players; //GameData.current.players;
@@ -44,7 +45,7 @@ public class BattleSystem : MonoBehaviour {
 		enemies.Add(new EntityStats(3, 2, 2, 4, 4, 5, 4, "Robot", "Sprites/silverrobotontracks_battle"));
 		enemies.Add(new EntityStats(3, 2, 2, 4, 4, 5, 4, "Robot", "Sprites/silverrobotontracks_battle"));
 		enemies.Add(new EntityStats(3, 2, 2, 4, 4, 5, 4, "Robot", "Sprites/silverrobotontracks_battle"));
-		enemies.Add(new EntityStats(3, 2, 2, 4, 4, 5, 4, "Robot", "Sprites/RED"));
+		enemies.Add(new EntityStats(3, 2, 2, 4, 4, 5, 4, "Robot", "Sprites/silverrobotontracks_battle"));
 
 		//give all battle enemies their stats from the encounter stats
 		encounterEnemyStats = enemies;
