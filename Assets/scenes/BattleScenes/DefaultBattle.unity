@@ -561,7 +561,7 @@ GameObject:
   - 114: {fileID: 193775195}
   - 61: {fileID: 193775197}
   - 50: {fileID: 193775196}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemy4
   m_TagString: BattleEnemy
   m_Icon: {fileID: 0}
@@ -960,7 +960,7 @@ GameObject:
   - 4: {fileID: 336183624}
   - 212: {fileID: 336183626}
   - 114: {fileID: 336183625}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1503,7 +1503,7 @@ GameObject:
   - 114: {fileID: 714945591}
   - 61: {fileID: 714945593}
   - 50: {fileID: 714945592}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemy1
   m_TagString: BattleEnemy
   m_Icon: {fileID: 0}
@@ -1739,7 +1739,7 @@ GameObject:
   - 114: {fileID: 803828725}
   - 61: {fileID: 803828727}
   - 50: {fileID: 803828726}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemy3
   m_TagString: BattleEnemy
   m_Icon: {fileID: 0}
@@ -2622,7 +2622,7 @@ GameObject:
   - 4: {fileID: 1064119410}
   - 212: {fileID: 1064119412}
   - 114: {fileID: 1064119411}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2751,7 +2751,7 @@ GameObject:
   - 4: {fileID: 1301699871}
   - 212: {fileID: 1301699870}
   - 114: {fileID: 1301699869}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3417,7 +3417,7 @@ GameObject:
   - 114: {fileID: 1963470463}
   - 61: {fileID: 1963470465}
   - 50: {fileID: 1963470464}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemy2
   m_TagString: BattleEnemy
   m_Icon: {fileID: 0}
@@ -3525,7 +3525,7 @@ GameObject:
   - 4: {fileID: 2098215191}
   - 212: {fileID: 2098215193}
   - 114: {fileID: 2098215192}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

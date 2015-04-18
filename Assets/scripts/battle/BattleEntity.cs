@@ -271,12 +271,11 @@ public class BattleEntity : MonoBehaviour {
 					aPlayer.SendMessage("nohilite");
 				}
 				if (Input.GetMouseButtonDown(0)) {
-					Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-					RaycastHit2D hit = Physics2D.Raycast(Input.mousePosition, -Vector2.up);
-					Debug.Log("hit: " + hit.transform.name);
+					Vector2 clickPoint = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,
+					                                 Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+					RaycastHit2D hit = Physics2D.Raycast(clickPoint, Vector2.zero);
 					Debug.Log("mouse position: " + Input.mousePosition);
 					if (hit.collider != null && hit.transform.tag.Equals("BattleEnemy")) {
-						Debug.Log("Enemy Hit");
 						basicAttack(hit.transform.gameObject);
 					}
 				}
