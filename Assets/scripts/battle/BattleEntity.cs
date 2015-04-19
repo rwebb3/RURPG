@@ -254,8 +254,17 @@ public class BattleEntity : MonoBehaviour {
 	
 	private void basicAttack(GameObject thingToAttack){
 		if (this.transform.gameObject.tag.Equals("BattlePlayer")){
-			Debug.Log(thingToAttack.transform.name);
+			thingToAttack.SendMessage("takeDamage", this.cur_atk);
 			this.endTurn();
+		}
+	}
+
+	private void takeDamage(int attackDamage){
+		Debug.Log ("HP before attack: " + this.hp);
+		this.hp = this.hp - attackDamage; //damage should be calculated some other way
+		Debug.Log ("HP after attack: " + this.hp);
+		if (this.hp <= 0){
+			GameObject.Destroy(this.transform.gameObject);
 		}
 	}
 		
