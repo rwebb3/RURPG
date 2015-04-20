@@ -254,8 +254,9 @@ public class BattleEntity : MonoBehaviour {
 	
 	private void basicAttack(GameObject thingToAttack){
 		if (this.transform.gameObject.tag.Equals("BattlePlayer")){
-			thingToAttack.SendMessage("takeDamage", this.cur_atk);
 			this.endTurn();
+			thingToAttack.SendMessage("takeDamage", this.cur_atk);
+			Debug.Log("damage to take: " + this.cur_atk);
 		}
 	}
 
@@ -263,9 +264,9 @@ public class BattleEntity : MonoBehaviour {
 		Debug.Log ("HP before attack: " + this.hp);
 		this.hp = this.hp - attackDamage; //damage should be calculated some other way
 		Debug.Log ("HP after attack: " + this.hp);
-		if (this.hp <= 0){
+		/*if (this.hp <= 0){
 			GameObject.Destroy(this.transform.gameObject);
-		}
+		}*/
 	}
 		
 	
@@ -274,7 +275,8 @@ public class BattleEntity : MonoBehaviour {
 		   if(this.transform.gameObject.tag.Equals("BattlePlayer")){
 			if (playerGUI.GetComponent<RadioButtons>().currentValue.Equals("AttackButton")){
 				foreach (GameObject anEnemy in enemies){
-					anEnemy.SendMessage("hilite");
+					if (anEnemy != null)
+						anEnemy.SendMessage("hilite");
 				}
 				foreach (GameObject aPlayer in players){
 					aPlayer.SendMessage("nohilite");
@@ -291,7 +293,8 @@ public class BattleEntity : MonoBehaviour {
 			}
 			else if (playerGUI.GetComponent<RadioButtons>().currentValue.Equals("SkillButton")){
 				foreach (GameObject anEnemy in enemies){
-					anEnemy.SendMessage("nohilite");
+					if (anEnemy != null)
+						anEnemy.SendMessage("nohilite");
 				}
 				foreach (GameObject aPlayer in players){
 					aPlayer.SendMessage("hilite");
@@ -299,7 +302,8 @@ public class BattleEntity : MonoBehaviour {
 			}
 			else if (playerGUI.GetComponent<RadioButtons>().currentValue.Equals("DefendButton")){
 					foreach (GameObject anEnemy in enemies){
-						anEnemy.SendMessage("nohilite");
+						if (anEnemy != null)
+							anEnemy.SendMessage("nohilite");
 					}
 					foreach (GameObject aPlayer in players){
 						aPlayer.SendMessage("nohilite");
@@ -308,7 +312,8 @@ public class BattleEntity : MonoBehaviour {
 			}
 			else{
 				foreach (GameObject anEnemy in enemies){
-					anEnemy.SendMessage("nohilite");
+					if (anEnemy != null)
+						anEnemy.SendMessage("nohilite");
 				}
 				foreach (GameObject aPlayer in players){
 					aPlayer.SendMessage("nohilite");

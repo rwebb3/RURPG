@@ -90,7 +90,12 @@ public class BattleSystem : MonoBehaviour {
 		entityTurn++; 
 		entityTurn %= allBattleEntities.Count;
 		//Debug.Log(entityTurn);
-		allBattleEntities[entityTurn].SendMessage("takeTurn");
+		if (allBattleEntities[entityTurn] == null){
+			nextTurn ();
+		}
+		else{
+			allBattleEntities[entityTurn].SendMessage("takeTurn");
+		}
 	}
 	
 	
