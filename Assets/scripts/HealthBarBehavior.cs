@@ -2,34 +2,33 @@
 using System.Collections;
 
 public class HealthBarBehavior : MonoBehaviour {
-	private float health;
-	private float maxHealth;
-
 	private float previousHealth;
 	private float tempHealth;
+	private float healthPercent;
+	private float health;
 
 	Vector3 startScale;
 	// Use this for initialization
 	void Start () {
-		startScale = this.transform.localScale;
-		health = this.GetComponentInParent<BattleEntity>().getHp();
-		previousHealth = 1; //this prevents the health bar from destorying it self right at the start (see Update())
-
-	}
-
-	public void updateHealth(float changeInHealth){
-		float newHealth = this.health - changeInHealth;
+		this.startScale = this.transform.localScale;
+		this.health = this.GetComponentInParent<BattleEntity>().getHp(); //this prevents the health bar from destorying it self right at the start (see Update())
 		this.previousHealth = this.health;
-		this.health = newHealth;
+
 	}
+
+	public void updateHealth(int changeInHealth){
+		this.previousHealth = this.health;
+		this.health = this.health - changeInHealth;
+	}
+	
 	// Update is called once per frame
 	void Update () {
-		tempHealth = Mathf.Lerp(previousHealth, health, Time.time);
-		if (tempHealth < 0)
-			tempHealth = 0;
-		float healthPercent = tempHealth/maxHealth;
-		this.transform.localScale = new Vector3(startScale.x * healthPercent, startScale.y, startScale.z);
-		if (tempHealth == 0)
-			GameObject.Destroy(this.gameObject.GetComponentInParent<Transform>());
+		this.tempHealth = Mathf.Lerp(this.previousHealth, this.health, Time.time);
+		this.healthPercent = tempHealth/this.GetComponentInParent<BattleEntity>().getMaxHP();
+		this.transform.localScale = new Vector3(this.startScale.x * this.healthPercent, this.startScale.y, this.startScale.z);
+		if (this.tempHealth <= 0){ //if tempHealth started at 0 it would destory itself immediately
+			Debug.Log("current HP: " + this.GetComponentInParent<BattleEntity>().getHp());
+			GameObject.Destroy(this.transform.parent.gameObject);
+		}
 	}
 }

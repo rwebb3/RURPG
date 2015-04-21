@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 using System.Collections.Generic;
 
 [System.Serializable]
@@ -25,10 +26,13 @@ public class BattleEntity : MonoBehaviour {
 	private string sprite;
 	
 	private bool myTurn = false;
+	private bool canAttack = false;
+	
 	private GameObject[] enemies;
 	private GameObject[] players;
 	public GameObject battleManager;
 	private Text alertMessageBox;
+	private float waitForEnd = -1f;
 
 	void Start(){
 		alertMessageBox = GameObject.FindGameObjectWithTag("AlertText").GetComponent<Text>();
@@ -233,6 +237,7 @@ public class BattleEntity : MonoBehaviour {
 			this.alertMessageBox = GameObject.FindGameObjectWithTag("AlertText").GetComponent<Text>();
 		}
 		myTurn = true;
+		canAttack = true;
 		if (this.transform.gameObject.tag.Equals("BattlePlayer")){
 			playerGUI.SetActive(true);
 			playerGUI.GetComponent<RadioButtons>().ForceToValue("AttackButton");
@@ -244,6 +249,7 @@ public class BattleEntity : MonoBehaviour {
 	
 	private void endTurn(){
 		myTurn = false;
+		canAttack = false;
 		if(this.transform.gameObject.tag.Equals("BattlePlayer")){
 			playerGUI.GetComponent<RadioButtons>().ForceToValue("AttackButton");
 			playerGUI.SetActive(false);
@@ -252,26 +258,53 @@ public class BattleEntity : MonoBehaviour {
 		battleManager.SendMessage("nextTurn");
 	}
 	
+	private void endTurnAfterSeconds(float secondsToWait){
+		this.waitForEnd = secondsToWait;
+	}
+	
 	private void basicAttack(GameObject thingToAttack){
 		if (this.transform.gameObject.tag.Equals("BattlePlayer")){
-			this.endTurn();
-			thingToAttack.SendMessage("takeDamage", this.cur_atk);
-			Debug.Log("damage to take: " + this.cur_atk);
+			playerGUI.SetActive(false);
+		}	
+			StartCoroutine("jerk");
+			canAttack = false;
+			this.alertMessageBox.text = this.entityName + " attacks " + thingToAttack.GetComponent<BattleEntity>().entityName + "!";
+			endTurnAfterSeconds(1f);	
+			thingToAttack.SendMessage("takeDamage", this.cur_atk);		
+	}
+	
+	IEnumerator jerk(){
+		Vector3 startLocation = this.transform.position;
+		Vector3 targetLocation = new Vector3(startLocation.x, startLocation.y + 5, startLocation.z);
+		while(Vector3.Distance(transform.position, targetLocation) > 0.05f)
+		{
+			transform.position = Vector3.Lerp (transform.position, targetLocation, Time.deltaTime * 15);
+			yield return null;
+		}
+		while(Vector3.Distance(transform.position, startLocation) > 0.05f)
+		{
+			transform.position = Vector3.Lerp (transform.position, startLocation, Time.deltaTime * 15);
+			yield return null;
 		}
 	}
 
 	private void takeDamage(int attackDamage){
-		Debug.Log ("HP before attack: " + this.hp);
 		this.hp = this.hp - attackDamage; //damage should be calculated some other way
-		Debug.Log ("HP after attack: " + this.hp);
-		/*if (this.hp <= 0){
-			GameObject.Destroy(this.transform.gameObject);
-		}*/
 	}
 		
 	
 	void Update(){
-		if (myTurn){
+		//update a timer if one is set
+		if (waitForEnd > 0){
+			waitForEnd -= Time.deltaTime;
+			Debug.Log("waitForEnd: " + waitForEnd);
+			if (waitForEnd <= 0){
+				waitForEnd = -1f;
+				endTurn();
+			}
+		}
+	
+		if (myTurn && canAttack){
 		   if(this.transform.gameObject.tag.Equals("BattlePlayer")){
 			if (playerGUI.GetComponent<RadioButtons>().currentValue.Equals("AttackButton")){
 				foreach (GameObject anEnemy in enemies){
@@ -324,7 +357,7 @@ public class BattleEntity : MonoBehaviour {
 		   
 		   else{
 				//Debug.Log("enemy turn");
-				this.endTurn();
+				endTurn();
 				//battleManager.SendMessage("nextTurn");
 		   }
 		   
