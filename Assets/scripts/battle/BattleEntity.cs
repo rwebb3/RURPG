@@ -265,30 +265,60 @@ public class BattleEntity : MonoBehaviour {
 	private void basicAttack(GameObject thingToAttack){
 		if (this.transform.gameObject.tag.Equals("BattlePlayer")){
 			playerGUI.SetActive(false);
+			StartCoroutine("jerkUp");
+		}
+		else{
+			StartCoroutine("jerkDown");
 		}	
-			StartCoroutine("jerk");
 			canAttack = false;
 			this.alertMessageBox.text = this.entityName + " attacks " + thingToAttack.GetComponent<BattleEntity>().entityName + "!";
 			endTurnAfterSeconds(1f);	
 			thingToAttack.SendMessage("takeDamage", this.cur_atk);		
 	}
 	
-	IEnumerator jerk(){
+	IEnumerator jerkUp(){
+		
 		Vector3 startLocation = this.transform.position;
 		Vector3 targetLocation = new Vector3(startLocation.x, startLocation.y + 5, startLocation.z);
 		while(Vector3.Distance(transform.position, targetLocation) > 0.05f)
 		{
+			Debug.Log(this.transform.name + "Jerking up");
 			transform.position = Vector3.Lerp (transform.position, targetLocation, Time.deltaTime * 15);
 			yield return null;
 		}
 		while(Vector3.Distance(transform.position, startLocation) > 0.05f)
 		{
+			Debug.Log(this.transform.name + "Jerking up");
 			transform.position = Vector3.Lerp (transform.position, startLocation, Time.deltaTime * 15);
 			yield return null;
 		}
 	}
-
+	
+	IEnumerator jerkDown(){
+		
+		Vector3 startLocation = this.transform.position;
+		Vector3 targetLocation = new Vector3(startLocation.x, startLocation.y - 5, startLocation.z);
+		while(Vector3.Distance(transform.position, targetLocation) > 0.05f)
+		{
+			Debug.Log(this.transform.name + "Jerking Down");
+			transform.position = Vector3.Lerp (transform.position, targetLocation, Time.deltaTime * 15);
+			yield return null;
+		}
+		while(Vector3.Distance(transform.position, startLocation) > 0.05f)
+		{
+			Debug.Log(this.transform.name + "Jerking Down");
+			transform.position = Vector3.Lerp (transform.position, startLocation, Time.deltaTime * 15);
+			yield return null;
+		}
+	}
+	
 	private void takeDamage(int attackDamage){
+		if (this.transform.gameObject.tag.Equals("BattlePlayer")){
+			StartCoroutine("jerkDown");
+		}
+		else{
+			StartCoroutine("jerkUp");
+		}
 		this.hp = this.hp - attackDamage; //damage should be calculated some other way
 	}
 		
@@ -297,7 +327,6 @@ public class BattleEntity : MonoBehaviour {
 		//update a timer if one is set
 		if (waitForEnd > 0){
 			waitForEnd -= Time.deltaTime;
-			Debug.Log("waitForEnd: " + waitForEnd);
 			if (waitForEnd <= 0){
 				waitForEnd = -1f;
 				endTurn();
@@ -318,7 +347,6 @@ public class BattleEntity : MonoBehaviour {
 					Vector2 clickPoint = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,
 					                                 Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
 					RaycastHit2D hit = Physics2D.Raycast(clickPoint, Vector2.zero);
-					Debug.Log("mouse position: " + Input.mousePosition);
 					if (hit.collider != null && hit.transform.tag.Equals("BattleEnemy")) {
 						basicAttack(hit.transform.gameObject);
 					}
@@ -341,7 +369,7 @@ public class BattleEntity : MonoBehaviour {
 					foreach (GameObject aPlayer in players){
 						aPlayer.SendMessage("nohilite");
 					}
-					this.endTurn();
+					
 			}
 			else{
 				foreach (GameObject anEnemy in enemies){
@@ -357,7 +385,7 @@ public class BattleEntity : MonoBehaviour {
 		   
 		   else{
 				//Debug.Log("enemy turn");
-				endTurn();
+				basicAttack(players[0]);
 				//battleManager.SendMessage("nextTurn");
 		   }
 		   

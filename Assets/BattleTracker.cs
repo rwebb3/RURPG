@@ -8,7 +8,7 @@ public class BattleTracker : MonoBehaviour {
 
 	public void takeDamage(int damageAmount) {
 		DamageIndicator.SetActive(true);
-		DamageIndicator.SendMessage("showDamage", damageAmount); //GetComponent<Text>().text = damageAmount.ToString();
+		DamageIndicator.SendMessage("showDamage", damageAmount);
 		HealthBar.GetComponent<HealthBarBehavior>().updateHealth(damageAmount);
 	}
 

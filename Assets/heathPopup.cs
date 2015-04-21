@@ -20,6 +20,8 @@ public class heathPopup : MonoBehaviour {
 		timer = 0.0f;
 		growAmount = 0.002f;
 		
+		this.gameObject.GetComponent<Text>().text = damageAmount.ToString();
+		
 		if (damageAmount < 0f){
 			this.gameObject.GetComponent<Text>().color = Color.green;
 		}
@@ -32,6 +34,7 @@ public class heathPopup : MonoBehaviour {
 	void Update () {
 		timer += Time.deltaTime;
 		if (timer > timeToShow){
+			this.gameObject.transform.localScale = startScale;
 			this.gameObject.SetActive(false);
 		}
 		else{
