@@ -97,11 +97,4 @@ public class BattleSystem : MonoBehaviour {
 			allBattleEntities[entityTurn].SendMessage("takeTurn");
 		}
 	}
-	
-	
-	// Update is called once per frame
-	void Update () {
-		
-
-	}
 }

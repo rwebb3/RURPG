@@ -16,7 +16,7 @@ public class heathPopup : MonoBehaviour {
 		startScale = this.gameObject.transform.localScale;
 		this.gameObject.SetActive(true);
 		
-		timeToShow = 1.0f;
+		timeToShow = 0.5f;
 		timer = 0.0f;
 		growAmount = 0.002f;
 		
