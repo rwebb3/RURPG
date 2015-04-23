@@ -279,7 +279,7 @@ GameObject:
   - 114: {fileID: 104283843}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: MainScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1636,7 +1636,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 2fe7c5272c33fc34d8e8f60b4d073591, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 249.600006
+      value: -215.899994
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 2fe7c5272c33fc34d8e8f60b4d073591, type: 2}
       propertyPath: m_LocalPosition.z

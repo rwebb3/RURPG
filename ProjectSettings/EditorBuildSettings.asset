@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/scenes/MainMenu.unity
   - enabled: 1
     path: Assets/scenes/map.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/scenes/Muse.unity
   - enabled: 0
     path: Assets/scenes/Davis_fake.unity

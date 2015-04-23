@@ -12,9 +12,13 @@ public class BattleSystem : MonoBehaviour {
 
 	private List<GameObject> allBattleEntities; //battle entities to be ordered by speed
 	private int entityTurn; //which entities turn it currently is.
-
+	
 	// Use this for initialization
 	void Start () {
+		foreach (GameObject anObject in GameObject.FindGameObjectsWithTag("MainScene")){
+			anObject.SetActive(false);
+		}
+		
 		//a list of characters for testing
 		List<EntityStats> players = new List<EntityStats>();
 		players.Add(new EntityStats(10, 3, 10, 10, 10, 10, 10, "Steve", "Sprites/mustrumridcully_back"));

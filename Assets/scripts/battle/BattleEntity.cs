@@ -282,13 +282,11 @@ public class BattleEntity : MonoBehaviour {
 		Vector3 targetLocation = new Vector3(startLocation.x, startLocation.y + 5, startLocation.z);
 		while(Vector3.Distance(transform.position, targetLocation) > 0.05f)
 		{
-			Debug.Log(this.transform.name + "Jerking up");
 			transform.position = Vector3.Lerp (transform.position, targetLocation, Time.deltaTime * 15);
 			yield return null;
 		}
 		while(Vector3.Distance(transform.position, startLocation) > 0.05f)
 		{
-			Debug.Log(this.transform.name + "Jerking up");
 			transform.position = Vector3.Lerp (transform.position, startLocation, Time.deltaTime * 15);
 			yield return null;
 		}
@@ -300,13 +298,11 @@ public class BattleEntity : MonoBehaviour {
 		Vector3 targetLocation = new Vector3(startLocation.x, startLocation.y - 5, startLocation.z);
 		while(Vector3.Distance(transform.position, targetLocation) > 0.05f)
 		{
-			Debug.Log(this.transform.name + "Jerking Down");
 			transform.position = Vector3.Lerp (transform.position, targetLocation, Time.deltaTime * 15);
 			yield return null;
 		}
 		while(Vector3.Distance(transform.position, startLocation) > 0.05f)
 		{
-			Debug.Log(this.transform.name + "Jerking Down");
 			transform.position = Vector3.Lerp (transform.position, startLocation, Time.deltaTime * 15);
 			yield return null;
 		}
