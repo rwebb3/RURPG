@@ -20,6 +20,6 @@ public class encounterEnemy : MonoBehaviour {
 	
 	void OnDisable(){
 		bm = GameObject.FindGameObjectWithTag("BattleManager");
-		//bm.GetComponent<BattleSystem>().setUpBattle(theEnemies);
+		bm.GetComponent<BattleSystem>().setupBattle(theEnemies);
 	}
 }

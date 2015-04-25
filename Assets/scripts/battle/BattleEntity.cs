@@ -7,6 +7,9 @@ using System.Collections.Generic;
 public class BattleEntity : MonoBehaviour {
 	List<GameObject> playerActionButtons = new List<GameObject>();
 	public GameObject playerGUI; //the usable abilities by this character
+	public GameObject defendIcon;
+	public GameObject DamageIndicator;
+	public GameObject HealthBar;
 	//private UIPanel playerGUI; //the actual panel
 	
 	private int hp;
@@ -27,6 +30,8 @@ public class BattleEntity : MonoBehaviour {
 	
 	private bool myTurn = false;
 	private bool canAttack = false;
+	private bool defending = false;
+	private bool dead = false;
 	
 	private GameObject[] enemies;
 	private GameObject[] players;
@@ -35,6 +40,9 @@ public class BattleEntity : MonoBehaviour {
 	private float waitForEnd = -1f;
 
 	void Start(){
+		if (this.transform.gameObject.tag.Equals("BattlePlayer")){
+			this.defendIcon.SetActive(false);
+		}
 		alertMessageBox = GameObject.FindGameObjectWithTag("AlertText").GetComponent<Text>();
 		//Debug.Log(alertMessageBox.text);
 		if (this.transform.gameObject.tag.Equals("BattlePlayer")){
@@ -42,22 +50,23 @@ public class BattleEntity : MonoBehaviour {
 		}
 	}
 
-	public void setupEntity(int hp, int sp, int atk, int def, int spd, int maxHP, int maxSP, string entityName, string sprite) 
+	public void setupEntity(int _hp, int _sp, int _atk, int _def, int _spd, int _maxHP, int _maxSP, string _entityName, string _sprite) 
 	{
-		this.hp = hp;
-		this.sp = sp;
-		this.base_atk = atk;
-		this.cur_atk = atk;
-		this.base_def = def;
-		this.cur_def = def;
-		this.base_spd = spd;
-		this.cur_spd = spd;
-		this.maxHP = maxHP;
-		this.maxSP = maxSP;
-		this.entityName = entityName;
-		this.timer = new Timer(spd);
+		this.hp = _hp;
+		this.sp = _sp;
+		this.base_atk = _atk;
+		this.cur_atk = _atk;
+		this.base_def = _def;
+		this.cur_def = _def;
+		this.base_spd = _spd;
+		this.cur_spd = _spd;
+		this.maxHP = _maxHP;
+		this.maxSP = _maxSP;
+		this.entityName = _entityName;
+		this.timer = new Timer(_spd);
 		this.statusEffects = new List<StatusEffect>();
-		this.sprite = sprite;
+		this.sprite = _sprite;
+		//Debug.Log(this.name + ": " + this.hp);
 	}
 	
 	public int getHp() {
@@ -148,11 +157,6 @@ public class BattleEntity : MonoBehaviour {
 		this.entityName = entityName;
 	}
 	
-	/*public bool isMyTurn()
-	{
-		return this.timer.tick();
-	}*/
-	
 	public void addStatusEffect(StatusEffect statusEffect)
 	{
 		this.statusEffects.Add(statusEffect);
@@ -232,6 +236,11 @@ public class BattleEntity : MonoBehaviour {
 	}
 
 	void takeTurn(){
+		Debug.Log("here");
+		if (defending){
+			defending = false;
+			defendIcon.SetActive(false);
+		}
 		//set things up
 		if (this.alertMessageBox == null){
 			this.alertMessageBox = GameObject.FindGameObjectWithTag("AlertText").GetComponent<Text>();
@@ -307,17 +316,65 @@ public class BattleEntity : MonoBehaviour {
 			yield return null;
 		}
 	}
+
+	private void defend(){
+		defendIcon.SetActive(true);
+		defending = true;
+		endTurn();
+	}
 	
 	private void takeDamage(int attackDamage){
+		//decide which way to make the object animate (jerks up or down)
 		if (this.transform.gameObject.tag.Equals("BattlePlayer")){
 			StartCoroutine("jerkDown");
 		}
 		else{
 			StartCoroutine("jerkUp");
 		}
-		this.hp = this.hp - attackDamage; //damage should be calculated some other way
+
+		int tempDef = this.cur_def;
+		if (this.defending){
+			tempDef = this.cur_def * 2;
+		}
+		attackDamage = attackDamage - tempDef;
+		if (attackDamage < 0){
+			attackDamage = 0;
+		}
+		this.hp = this.hp - attackDamage; 
+
+		DamageIndicator.SetActive(true);
+		DamageIndicator.SendMessage("showDamage", attackDamage);
+		HealthBar.GetComponent<HealthBarBehavior>().updateHealth(attackDamage);
 	}
-		
+
+	private void heal(int healAmount){
+		int tempHP = this.hp;
+		this.hp += healAmount;
+		if (this.hp > this.maxHP){
+			healAmount = this.maxHP - tempHP;
+			this.hp = this.maxHP;
+		}
+		DamageIndicator.SetActive(true);
+		//send negative amount because function deals damage, negative damage heals
+		healAmount = healAmount * -1;
+		DamageIndicator.SendMessage("showDamage", healAmount);
+		HealthBar.GetComponent<HealthBarBehavior>().updateHealth(healAmount);
+	}
+
+	public void die(){
+		this.gameObject.SetActive(false);
+		this.myTurn = false;
+		this.dead = true;
+		this.HealthBar.SetActive(false);
+		if (this.transform.gameObject.tag.Equals("BattlePlayer")){
+			this.playerGUI.SetActive(false);
+			this.defendIcon.SetActive(false);
+		}
+	}
+
+	public bool isDead(){
+		return dead;
+	}
 	
 	void Update(){
 		//update a timer if one is set
@@ -329,7 +386,7 @@ public class BattleEntity : MonoBehaviour {
 			}
 		}
 	
-		if (myTurn && canAttack){
+		if (myTurn && canAttack && !dead){
 		   if(this.transform.gameObject.tag.Equals("BattlePlayer")){
 			if (playerGUI.GetComponent<RadioButtons>().currentValue.Equals("AttackButton")){
 				foreach (GameObject anEnemy in enemies){
@@ -348,13 +405,24 @@ public class BattleEntity : MonoBehaviour {
 					}
 				}
 			}
-			else if (playerGUI.GetComponent<RadioButtons>().currentValue.Equals("SkillButton")){
+			else if (playerGUI.GetComponent<RadioButtons>().currentValue.Equals("DamageSkillButton")){
 				foreach (GameObject anEnemy in enemies){
 					if (anEnemy != null)
-						anEnemy.SendMessage("nohilite");
+						//anEnemy.SendMessage("nohilite");
+						anEnemy.SendMessage("redhilite");
 				}
 				foreach (GameObject aPlayer in players){
-					aPlayer.SendMessage("hilite");
+					aPlayer.SendMessage("nohilite");
+				}
+				if (Input.GetMouseButtonDown(0)) {
+					Vector2 clickPoint = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,
+						                             Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+					RaycastHit2D hit = Physics2D.Raycast(clickPoint, Vector2.zero);
+					if (hit.transform.tag.Equals("BattleEnemy")){
+						foreach (GameObject anEnemy in enemies) {
+							basicAttack(anEnemy);
+						}
+					}
 				}
 			}
 			else if (playerGUI.GetComponent<RadioButtons>().currentValue.Equals("DefendButton")){
@@ -365,7 +433,25 @@ public class BattleEntity : MonoBehaviour {
 					foreach (GameObject aPlayer in players){
 						aPlayer.SendMessage("nohilite");
 					}
-					
+					defend();					
+			}
+			else if (playerGUI.GetComponent<RadioButtons>().currentValue.Equals("ItemButton")){
+					if (GameData.current.healthPots != 0 && this.hp != this.maxHP){
+						foreach (GameObject anEnemy in enemies){
+							if (anEnemy != null)
+								anEnemy.SendMessage("nohilite");
+						}
+						foreach (GameObject aPlayer in players){
+							aPlayer.SendMessage("nohilite");
+						}
+						heal(10);
+						GameData.current.healthPots -= 1;
+						canAttack = false;
+						endTurnAfterSeconds(0.5f);
+					}
+					else{
+						playerGUI.GetComponent<RadioButtons>().ForceToValue("AttackButton");
+					}
 			}
 			else{
 				foreach (GameObject anEnemy in enemies){

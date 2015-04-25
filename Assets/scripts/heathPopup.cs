@@ -20,14 +20,14 @@ public class heathPopup : MonoBehaviour {
 		timer = 0.0f;
 		growAmount = 0.002f;
 		
-		this.gameObject.GetComponent<Text>().text = damageAmount.ToString();
-		
 		if (damageAmount < 0f){
 			this.gameObject.GetComponent<Text>().color = Color.green;
+			damageAmount = damageAmount * -1;
 		}
 		else{
 			this.gameObject.GetComponent<Text>().color = Color.red;
 		}
+		this.gameObject.GetComponent<Text>().text = damageAmount.ToString();
 	}
 	
 	// Update is called once per frame

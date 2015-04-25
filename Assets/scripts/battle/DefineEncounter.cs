@@ -8,10 +8,10 @@ public class DefineEncounter : MonoBehaviour {
 	void Start(){
 		enemyList = new List<EntityStats>();
 		//EnemyBattleEntity(int hp, int sp, int atk, int def, int spd, int maxHP, int maxSP, string entityName) 
-		enemyList.Add(new EntityStats(3, 2, 2, 4, 4, 5, 4, "Robot", "Sprites/silverrobotontracks_battle"));
-		enemyList.Add(new EntityStats(3, 2, 2, 4, 4, 5, 4, "Robot", "Sprites/silverrobotontracks_battle"));
-		enemyList.Add(new EntityStats(3, 2, 2, 4, 4, 5, 4, "Robot", "Sprites/silverrobotontracks_battle"));
-		enemyList.Add(new EntityStats(3, 2, 2, 4, 4, 5, 4, "Robot", "Sprites/RED"));
+		enemyList.Add(new EntityStats(3, 2, 5, 4, 4, 5, 4, "Robot", "Sprites/silverrobotontracks_battle"));
+		enemyList.Add(new EntityStats(3, 2, 6, 4, 4, 5, 4, "Robot", "Sprites/silverrobotontracks_battle"));
+		enemyList.Add(new EntityStats(3, 2, 4, 4, 4, 5, 4, "Robot", "Sprites/silverrobotontracks_battle"));
+		enemyList.Add(new EntityStats(3, 2, 7, 4, 4, 5, 4, "Robot", "Sprites/RED"));
 	}
 		
 		

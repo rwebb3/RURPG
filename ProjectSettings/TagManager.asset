@@ -15,6 +15,7 @@ TagManager:
   - BattleEnemy
   - PlayerActionButton
   - AlertText
+  - BattleWrapper
   layers:
   - Default
   - TransparentFX
@@ -78,4 +79,7 @@ TagManager:
     locked: 0
   - name: OverWall
     uniqueID: 2925631849
+    locked: 0
+  - name: UI
+    uniqueID: 3872528765
     locked: 0
