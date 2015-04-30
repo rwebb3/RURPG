@@ -12,7 +12,11 @@ public class ShowOtherPanel : MonoBehaviour {
 	
 	//Button should close Help Text
 	public void UseButton() {
+	  if(thePanelToHide != null){
 		thePanelToHide.SetActive(false);
+	  }
+	  if(thePanelToShow != null){
 		thePanelToShow.SetActive(true);
+	  }
 	}
 }
