@@ -7,9 +7,11 @@ public class encounterEnemy : MonoBehaviour {
 	
 	private List<EntityStats> theEnemies;
 	private GameObject bm;
+	private bool encounteredEnemy = false;
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (LayerMask.LayerToName(other.gameObject.layer).Equals("Enemy")){
+			encounteredEnemy = true;
 			//Debug.Log("hit enemy");
 			Application.LoadLevelAdditive("DefaultBattle");
 			theEnemies = other.gameObject.GetComponent<DefineEncounter>().GetEnemyList();
@@ -19,7 +21,10 @@ public class encounterEnemy : MonoBehaviour {
 	}
 	
 	void OnDisable(){
+	  if (encounteredEnemy){
 		bm = GameObject.FindGameObjectWithTag("BattleManager");
 		bm.GetComponent<BattleSystem>().setupBattle(theEnemies);
+		encounteredEnemy = false;
+	  }
 	}
 }

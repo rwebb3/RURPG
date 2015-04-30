@@ -236,7 +236,6 @@ public class BattleEntity : MonoBehaviour {
 	}
 
 	void takeTurn(){
-		Debug.Log("here");
 		if (defending){
 			defending = false;
 			defendIcon.SetActive(false);

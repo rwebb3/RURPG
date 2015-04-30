@@ -73,7 +73,6 @@ public class VisualEffects : MonoBehaviour {
 			hiliteFadeIn = true;
 		if (hiliteFadeIn){
 			redness += .01f;
-				Debug.Log(redness);
 			greenness -= .01f;
 			blueness -= .01f;
 			this.transform.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f,0f,0f,1f);
