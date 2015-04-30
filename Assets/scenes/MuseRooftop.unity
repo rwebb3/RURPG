@@ -1246,6 +1246,7 @@ GameObject:
   - 222: {fileID: 626246290}
   - 114: {fileID: 626246289}
   - 114: {fileID: 626246288}
+  - 114: {fileID: 626246287}
   m_Layer: 5
   m_Name: Skip
   m_TagString: Untagged
@@ -1272,13 +1273,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 512, y: 510}
   m_Pivot: {x: .5, y: .5}
---- !u!114 &626246288
+--- !u!114 &626246287
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 626246285}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 081268e4c3caa7f4e95a24497a7b6544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitToPause: 2
+--- !u!114 &626246288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 626246285}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a6156c26b8b0e84c8f44372d1ec3323, type: 3}
   m_Name: 
@@ -3628,7 +3641,7 @@ GameObject:
   - 114: {fileID: 1642224999}
   - 114: {fileID: 1642224998}
   m_Layer: 5
-  m_Name: Reguardless
+  m_Name: Regardless
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3761,7 +3774,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '???: Reguardless, even if you HAD beaten the game legitimately, there''s
+  m_Text: '???: Regardless, even if you HAD beaten the game legitimately, there''s
     no way you could defeat me.'
 --- !u!222 &1732026751
 CanvasRenderer:
